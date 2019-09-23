@@ -1,79 +1,45 @@
-// VerilogA for TFET, NTFET, veriloga
 
-//VerilogA for double-gate GaSb-InAs Heterojunction Tunnel FET model based on lookup tables, which employs the current and capacitance characteristics from calibrated TCAD Sentaurus Simulations
-//Model details: V. Saripalli et al IEEE/ACM NanoArch 2011.
-//Original Model Developed by V. Saripalli
-//Implemented by H. Liu 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-`include "constants.vams"//This file contains the definitions of canstant
-`include "disciplines.vams"//This file contains the definitions that make the Verilog-A specific for electrical modeling
 
-module NTFET(d,g,s);//block named ntfet and having 3 inout ports g,d,s 
+`include "constants.vams"
+`include "disciplines.vams"
+
+module NTFET(d,g,s);
 inout d,g,s;
-electrical g,d,s;//define the port as electrical behaviour
-real Ids, Cgs, Cgd,Qg, Qs, Qd;
+electrical g,d,s;
+real Ids, Cgs, Cgd,Qg, Qs, Qd, Cds;
+real Cgs_tmp,Cgd_tmp,Cds_tmp,Csg_tmp,Cdg_tmp,Csd_tmp; 
 parameter real W=1 from (0:inf);
-//parameter string type = "n" from '{"n", "p"};
 integer direction;
-
+branch (g, s) cgs;
 analog begin
 
-//http://literature.cdn.keysight.com/litweb/pdf/ads2005a/verilogaref/varef103.html
-//for table_model function for predicting value in range and doing interpolation to find the unknown value in its range
-//$table_model( table_inputs, table_data_source, table_control_string );
-//table_control_string is a two part string. The first character is an integer indicating the degrees of the spline interpolation (either 1 | 2| 3). The second part of the control string consists of one or two characters (either C | L | E) indicating the type of extrapolation mode at the beginning and end of the data. For more information on the table_control_string argument
+begin
+Ids=$table_model(V(d,s), (V(g,s)), "IdVg-NFET1.tbl","1L,1L");
+Cgd_tmp=$table_model(V(d,s), (V(g,s)), "CGD-NFET-Lg-16nm.tbl","1C,1C");
+Cgs_tmp=$table_model(V(d,s), (V(g,s)), "CGS-NFET-Lg-16nm.tbl","1C,1C");
+Cds_tmp=$table_model(V(d,s), (V(g,s)), "CDS-NFET-Lg-16nm.tbl","1C,1C");
+direction =-1;
+end
 
-//Table Interpolation Character 
-/*
-Interpolation Character Description 
-1
-Linear spline (degree 1)
-2
-Quadratic spline (degree 2)
-3
-Cubic spline (degree 3)
---------------------------
-Table Extrapolation Character 
-Extrapolation Character Description 
-C
-Clamp extrapolation
-L
-Linear extrapolation (default)
-E
-Error condition
-*/
+if(analysis("tran")) 
+begin
+Cgd=/*abs*/0.9*(Cgd_tmp);
+Cgs=/*abs*/0.9*(Cgs_tmp);
+Cds=/*abs*/0.9*(Cds_tmp);
+Qd = (-1*W*Cgd)*(V(g,d));
+Qs = (-1*W*Cgs)*(V(g,s));
+Qg=-1*(Qd+Qs);
+I(d,s) <+ direction*Ids*W ;
+I(d) <+ ddt(Qd);
+I(s) <+ ddt(Qs);
+I(g) <+ ddt(Qg);
+I(cgs) <+ Cgs*ddt(V(cgs));
+end
 
-//if (type == "n") begin
-Ids=$table_model(V(d,s), (V(g,s)), "IdVg-NFET-Lg-16nm.tbl","1LL,1LL");
-Cgd=$table_model(V(d,s), (V(g,s)), "CGD-NFET-Lg-16nm.tbl","1LL,1LL");
-Cgs=$table_model(V(d,s), (V(g,s)), "CGS-NFET-Lg-16nm.tbl","1LL,1LL");
-
-direction =-1;//because current flow opposite to electrons
-//end
-
-//else if (type == "p") begin
-
-// We assume that the PTFET and NTFET drive currents are similar
-//Ids=$table_model(-V(d,s), (-V(g,s)), "IdVg-InAs-NTFET-Lg-20nm.tbl","1LL,1LL");
-// We do not assume that the PTFET and NTFET gate capacitances are similar because the hole and electon DoS in InAs are significantly different
-//Cgd=$table_model(V(d,s), (V(g,s)), "CGD-InAs-PTFET-Lg-20nm.tbl","1LL,1LL");
-//Cgs=$table_model(V(d,s), (V(g,s)), "CGS-InAs-PTFET-Lg-20nm.tbl","1LL,1LL");
-
-//direction = =1;//because current flow same direction to holes
-//end
-//endif
-
-      Qd = W*(-1)*Cgd*(V(g,d));
-      Qs = W*(-1)*Cgs*(V(g,s));
-      Qg=(-1)*(Qd+Qs);	
-      I(d,s) <+ direction*Ids*W ;
-      I(g) <+ ddt(Qg);
-      I(s) <+ ddt(Qs);
-      I(d) <+ ddt(Qd);
-	  //The right hand side includes a derivative with respect to time. This is implemented with the ddt() operator. 
-	//Use of the contribution operator (<+) makes this a contribution statement. It specifies an equation that must be satisfied by the simulator. It states that the voltage on branch res must equal the current through that branch multiplied by r.
+else
+begin
+I(d,s) <+ direction*Ids*W;
+end
+     
 end
 endmodule
-
-
-
