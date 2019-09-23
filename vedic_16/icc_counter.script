@@ -1,0 +1,39 @@
+
+#in icc >> start gui and stop gui or gui_start and gui_stop
+
+set search_path  [list . ~/scl_icc/scl_lib]
+set target_library [list tsl18fs120_scl_ss.db tsl18cio250_max.db ]
+set link_library [list * tsl18fs120_scl_ss.db tsl18cio250_max.db]
+
+create_mw_lib dcc_mw -technology ~/scl_icc/scl_lib -mw_reference_library {~/scl_icc/scl_lib ~/scl_icc/cio250_scl}
+open_mw_lib dcc_mw
+
+
+
+         create_mw_lib counter_mw -technology /home/jai-t1/project/icc.tf -mw_reference_library {/home/jai-t1/project/sclmw_lib  /home/jai-t1/project/sclmw_io_lib } 
+
+
+
+check_library
+read_verilog /home/jai-t1/project/src/netlist.v
+
+
+read_file -format vhdl /home/jai-t1/project/src/counter.vhd
+read_file -format vhdl /home/jai-t1/project/src/io1.vhd
+uplevel #0 check_design
+create_clock clk_io -period 10 -waveform {0 5}
+dont_touch_network clk_io 
+uniquify
+ungroup -all -flatten
+compile_ultra -no_autoungroup
+report_power
+report_area
+report_timing
+
+write_file -format ddc -output aes_io_final.ddcsource
+write_sdc aes_io_final.sdc
+write_sdf aes_io_final.sdf
+change_names -rules verilog
+write_file -format verilog -output netlist.v
+report_area > area_io.rpt
+report_power > power_io.rpt

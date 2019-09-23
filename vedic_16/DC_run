@@ -1,0 +1,1003 @@
+Initializing gui preferences from file  /home/vlsi/.synopsys_dv_prefs.tcl
+dc_shell> gui_start
+4.1
+dc_shell> source ~/scl_icc/setup.tcl
+* tsl18fs120_scl_ss.db tsl18cio250_max.db
+dc_shell> read_file -format verilog {/home/vlsi/Desktop/synopsys_work/vedic_16/vedic_16bit.v /home/vlsi/Desktop/synopsys_work/vedic_16/vedic_8bit.v /home/vlsi/Desktop/synopsys_work/vedic_16/vedic_4bit.v /home/vlsi/Desktop/synopsys_work/vedic_16/vedic_2bit.v /home/vlsi/Desktop/synopsys_work/vedic_16/fa_16bit.v /home/vlsi/Desktop/synopsys_work/vedic_16/fa_8bit.v /home/vlsi/Desktop/synopsys_work/vedic_16/fa_4bit.v /home/vlsi/Desktop/synopsys_work/vedic_16/fa.v}
+Loading db file '/home/vlsi/scl_icc/scl_lib/tsl18fs120_scl_ss.db'
+Loading db file '/home/vlsi/scl_icc/scl_lib/tsl18cio250_max.db'
+Loading db file '/home/vlsi/user/synopsys/DC_compiler/libraries/syn/gtech.db'
+Loading db file '/home/vlsi/user/synopsys/DC_compiler/libraries/syn/standard.sldb'
+  Loading link library 'tsl18fs120_scl_ss'
+  Loading link library 'tsl18cio250_max'
+  Loading link library 'gtech'
+Loading verilog files: '/home/vlsi/Desktop/synopsys_work/vedic_16/vedic_16bit.v' '/home/vlsi/Desktop/synopsys_work/vedic_16/vedic_8bit.v' '/home/vlsi/Desktop/synopsys_work/vedic_16/vedic_4bit.v' '/home/vlsi/Desktop/synopsys_work/vedic_16/vedic_2bit.v' '/home/vlsi/Desktop/synopsys_work/vedic_16/fa_16bit.v' '/home/vlsi/Desktop/synopsys_work/vedic_16/fa_8bit.v' '/home/vlsi/Desktop/synopsys_work/vedic_16/fa_4bit.v' '/home/vlsi/Desktop/synopsys_work/vedic_16/fa.v' 
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/vlsi/Desktop/synopsys_work/vedic_16/vedic_16bit.v
+Compiling source file /home/vlsi/Desktop/synopsys_work/vedic_16/vedic_8bit.v
+Compiling source file /home/vlsi/Desktop/synopsys_work/vedic_16/vedic_4bit.v
+Compiling source file /home/vlsi/Desktop/synopsys_work/vedic_16/vedic_2bit.v
+Compiling source file /home/vlsi/Desktop/synopsys_work/vedic_16/fa_16bit.v
+Compiling source file /home/vlsi/Desktop/synopsys_work/vedic_16/fa_8bit.v
+Compiling source file /home/vlsi/Desktop/synopsys_work/vedic_16/fa_4bit.v
+Compiling source file /home/vlsi/Desktop/synopsys_work/vedic_16/fa.v
+Presto compilation completed successfully.
+Current design is now '/home/vlsi/Desktop/synopsys_work/vedic_16/vedic_16bit.db:vedic_16bit'
+Loaded 8 designs.
+Current design is 'vedic_16bit'.
+dc_shell> 
+Current design is 'vedic_16bit'.
+Loading db file '/home/vlsi/user/synopsys/DC_compiler/libraries/syn/generic.sdb'
+dc_shell> create_clock -name "clk" -period 1 -waveform {0.0 0.5} clk
+1
+dc_shell> set_input_delay 0.35 -clock clk {a b}
+1
+dc_shell> set_output_delay 0.5 -clock clk {c}
+1
+dc_shell> compile -exact_map
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | O-2018.06-DWBB_201806.1 |     *     |
+| Licensed DW Building Blocks        |                         |           |
+============================================================================
+
+
+Information: There are 46 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+Warning: IO pad 'pc3d00' is unusable: unknown logic function.  (OPT-1022)
+Warning: Operating condition tsl18fs120_scl_ss set on design vedic_16bit has different process,
+voltage and temperatures parameters than the parameters at which target library 
+tsl18cio250_max is characterized. Delays may be inaccurate as a result. (OPT-998)
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'fa_0'
+  Processing 'fa_16bit_0'
+  Processing 'fa_8bit_0'
+  Processing 'fa_4bit_0'
+  Processing 'vedic_2bit_0'
+  Processing 'vedic_4bit_0'
+  Processing 'vedic_8bit_0'
+  Processing 'vedic_16bit'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+
+  Beginning Mapping Optimizations  (Medium effort)
+  -------------------------------
+  Mapping Optimization (Phase 1)
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:06   56502.3     23.36     522.7       0.0                          
+    0:00:06   56502.3     23.36     522.7       0.0                          
+    0:00:06   56502.3     23.36     522.7       0.0                          
+    0:00:06   56502.3     23.36     522.7       0.0                          
+    0:00:06   56502.3     23.36     522.7       0.0                          
+    0:00:07   51903.2     25.77     569.1       0.0                          
+    0:00:07   48506.6     23.90     528.9       0.0                          
+    0:00:07   47970.5     23.62     518.2       0.0                          
+    0:00:07   47945.4     23.64     518.2       0.0                          
+    0:00:07   47945.4     23.64     518.6       0.0                          
+    0:00:07   47945.4     23.64     518.2       0.0                          
+    0:00:07   47945.4     23.64     518.6       0.0                          
+    0:00:07   47945.4     23.64     518.2       0.0                          
+    0:00:07   47945.4     23.64     518.6       0.0                          
+    0:00:07   47945.4     23.64     518.2       0.0                          
+    0:00:07   47945.4     23.64     518.2       0.0                          
+    0:00:07   47945.4     23.64     518.2       0.0                          
+    0:00:07   47945.4     23.64     518.2       0.0                          
+    0:00:08   47945.4     23.64     518.2       0.0                          
+    0:00:08   47945.4     23.64     518.2       0.0                          
+    0:00:08   47945.4     23.64     518.2       0.0                          
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:08   47945.4     23.64     518.2       0.0                          
+    0:00:08   48290.4     23.17     515.0       0.0 c[31]                    
+    0:00:08   48387.6     23.11     513.6       0.0 c[31]                    
+    0:00:08   48453.4     23.06     512.6       0.0 c[31]                    
+    0:00:08   48754.7     22.87     507.9       0.0 c[31]                    
+    0:00:08   48836.2     22.84     507.2       0.0 c[31]                    
+    0:00:08   48848.7     22.83     506.7       0.0 c[31]                    
+    0:00:08   48870.7     22.76     505.7       0.0 c[31]                    
+    0:00:09   48867.5     22.55     504.9       0.0 c[31]                    
+    0:00:09   48836.1     22.55     504.5       0.0 c[31]                    
+    0:00:09   48826.7     22.52     504.6       0.0 c[31]                    
+    0:00:09   48851.8     22.47     504.0       0.0 c[31]                    
+    0:00:09   48914.6     22.46     503.7       0.0 c[31]                    
+    0:00:09   48920.8     22.45     503.6       0.0 c[31]                    
+    0:00:09   48917.7     22.42     503.1       0.0 c[31]                    
+    0:00:09   48917.7     22.42     503.1       0.0 c[31]                    
+    0:00:10   48914.6     22.41     503.0       0.0 c[31]                    
+    0:00:10   48971.0     22.30     500.2       2.0 c[31]                    
+    0:00:10   49115.3     22.06     495.5       4.1 c[31]                    
+    0:00:10   49124.7     21.93     493.7       4.1 c[31]                    
+    0:00:10   49203.1     21.82     492.3       4.1 c[31]                    
+    0:00:10   49416.3     21.67     491.1       4.1 c[31]                    
+    0:00:10   49504.1     21.58     489.4       6.1 c[31]                    
+    0:00:10   49563.7     21.50     488.3       6.1 c[31]                    
+    0:00:10   49620.1     21.44     487.0       6.1 c[31]                    
+    0:00:10   49645.2     21.38     486.1       6.1 c[31]                    
+    0:00:10   49742.4     21.30     485.7       6.1 c[31]                    
+    0:00:10   49871.0     21.19     483.7       6.1 c[31]                    
+    0:00:11   49871.0     21.14     482.7       6.1 c[31]                    
+    0:00:11   49886.7     21.10     482.2       6.1 c[31]                    
+    0:00:11   49968.2     21.06     481.0       8.1 c[31]                    
+    0:00:11   50118.8     21.00     479.6       8.1 c[31]                    
+    0:00:11   50134.4     20.99     479.3       8.1 c[31]                    
+    0:00:11   50137.6     20.98     479.0       8.1 c[31]                    
+    0:00:11   50288.1     20.92     477.3       8.1 c[31]                    
+    0:00:11   50300.6     20.88     476.2       8.1 c[31]                    
+    0:00:11   50237.9     20.85     475.6       8.1 c[31]                    
+    0:00:11   50222.2     20.83     475.0       8.1 c[31]                    
+    0:00:11   50363.3     20.72     472.7       8.1 c[31]                    
+    0:00:11   50626.7     20.59     471.1       8.1 c[31]                    
+    0:00:11   50636.1     20.56     470.8       8.1 c[31]                    
+    0:00:11   50633.0     20.54     469.8       8.1 c[31]                    
+    0:00:11   50636.1     20.53     470.0       8.1 c[31]                    
+    0:00:12   50874.4     20.43     468.4       8.1 c[31]                    
+    0:00:12   50984.2     20.34     467.6       6.1 c[31]                    
+    0:00:12   51021.8     20.33     467.4       6.1 c[31]                    
+    0:00:12   51034.4     20.31     467.1       6.1 c[31]                    
+    0:00:12   51250.8     20.24     465.5       6.1 c[31]                    
+    0:00:12   51241.4     20.23     465.7       6.1 c[31]                    
+    0:00:12   51222.5     20.23     465.6       6.1 c[31]                    
+    0:00:12   51435.8     20.21     465.4       6.1 c[31]                    
+    0:00:12   51432.7     20.21     465.4       6.1 c[31]                    
+    0:00:12   51432.7     20.21     465.4       6.1 c[31]                    
+    0:00:12   51504.8     20.19     465.1       8.1 c[31]                    
+    0:00:12   51498.5     20.19     465.0       8.1 c[31]                    
+    0:00:12   51495.4     20.19     465.0       8.1 c[31]                    
+    0:00:12   51693.0     20.16     463.6       8.1 c[31]                    
+    0:00:12   51733.7     20.13     463.4       6.1 c[31]                    
+    0:00:13   51736.8     20.09     462.7       6.1 c[31]                    
+    0:00:13   51758.8     20.07     462.3       6.1 c[31]                    
+    0:00:14   51755.7     20.04     462.1       6.1 c[31]                    
+    0:00:14   51733.7     19.99     460.6       6.1 c[31]                    
+    0:00:14   51768.2     19.93     459.2       6.1 c[31]                    
+    0:00:14   51805.8     19.91     458.7       6.1 c[31]                    
+    0:00:15   51843.5     19.81     456.0       6.1 c[31]                    
+    0:00:15   51733.7     19.80     455.7       4.1 c[31]                    
+    0:00:16   51658.4     19.79     455.4       4.1                          
+    0:00:16   51658.4     19.79     455.4       4.1                          
+
+
+  Beginning Design Rule Fixing  (max_transition)
+  ----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:16   51658.4     19.79     455.4       4.1                          
+    0:00:16   51526.7     19.79     455.4       0.0 c[31]                    
+    0:00:16   51623.9     19.75     454.5       0.0 c[31]                    
+    0:00:16   51617.6     19.75     454.3       0.0 c[31]                    
+    0:00:16   51674.1     19.70     453.4       0.0                          
+    0:00:16   51674.1     19.68     453.0       0.0                          
+    0:00:16   51645.8     19.68     452.8       0.0                          
+    0:00:16   51714.8     19.67     452.6       0.0                          
+    0:00:17   51818.3     19.65     452.2       0.0                          
+    0:00:17   51818.3     19.65     452.1       0.0                          
+    0:00:17   51815.2     19.65     452.0       0.0                          
+    0:00:17   51796.4     19.64     451.9       0.0                          
+    0:00:17   51777.6     19.64     451.4       0.0                          
+    0:00:17   51780.7     19.64     451.0       0.0                          
+    0:00:17   51758.8     19.64     450.3       0.0                          
+
+
+  Beginning Area-Recovery Phase  (cleanup)
+  -----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:17   51758.8     19.64     450.3       0.0                          
+    0:00:17   51758.8     19.64     450.3       0.0                          
+    0:00:17   51376.2     19.65     450.0       0.0                          
+    0:00:17   51329.2     19.65     450.0       0.0                          
+    0:00:17   51329.2     19.65     450.0       0.0                          
+    0:00:17   51329.2     19.65     450.0       0.0                          
+    0:00:17   51329.2     19.65     450.0       0.0                          
+    0:00:17   51329.2     19.65     450.0       0.0                          
+    0:00:17   50350.9     19.91     456.4       0.0                          
+    0:00:17   49802.1     19.94     455.9       0.0                          
+    0:00:17   49566.9     19.94     455.9       0.0                          
+    0:00:17   49353.6     19.94     455.9       0.0                          
+    0:00:17   49294.0     19.94     455.9       0.0                          
+    0:00:17   49294.0     19.94     455.9       0.0                          
+    0:00:17   49294.0     19.94     455.9       0.0                          
+    0:00:17   49294.0     19.94     455.9       0.0                          
+    0:00:17   49372.4     19.86     454.2       0.0 c[31]                    
+    0:00:17   49381.8     19.75     453.0       0.0 c[31]                    
+    0:00:18   49385.0     19.73     452.4       0.0 c[31]                    
+    0:00:18   49385.0     19.73     452.4       0.0 c[31]                    
+    0:00:18   49444.6     19.72     452.1       0.0 c[31]                    
+    0:00:18   49450.9     19.72     452.0       0.0 c[31]                    
+    0:00:18   49457.1     19.72     452.1       0.0 c[31]                    
+    0:00:18   49482.2     19.72     452.1       0.0                          
+    0:00:18   49469.7     19.72     452.1       0.0                          
+    0:00:18   49344.3     19.71     451.5       0.0                          
+    0:00:18   49375.6     19.67     450.4       0.0                          
+    0:00:18   49375.6     19.66     450.3       0.0                          
+    0:00:19   49378.8     19.66     450.3       0.0                          
+    0:00:19   49381.9     19.64     450.1       0.0                          
+    0:00:19   49378.8     19.63     449.7       0.0                          
+    0:00:19   49378.8     19.63     449.7       0.0                          
+    0:00:19   49422.7     19.63     449.6       0.0                          
+    0:00:19   49428.9     19.63     449.3       0.0                          
+    0:00:19   49425.8     19.63     449.3       0.0 c[31]                    
+    0:00:19   49422.7     19.63     449.3       0.0 c[31]                    
+    0:00:19   49419.5     19.63     449.3       0.0 c[31]                    
+    0:00:19   49416.4     19.63     449.3       0.0 c[31]                    
+    0:00:19   49460.3     19.61     449.0       0.0 c[31]                    
+    0:00:19   49513.6     19.60     448.7       0.0 c[31]                    
+    0:00:19   49516.7     19.59     448.4       0.0 c[31]                    
+    0:00:20   49554.3     19.58     448.2       0.0 c[31]                    
+    0:00:20   49570.0     19.55     447.7       0.0                          
+Loading db file '/home/vlsi/scl_icc/scl_lib/tsl18fs120_scl_ss.db'
+Loading db file '/home/vlsi/scl_icc/scl_lib/tsl18cio250_max.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+1
+Current design is 'vedic_16bit'.
+dc_shell> close_gui
+Error: unknown command 'close_gui' (CMD-005)
+dc_shell> gui_start
+Current design is 'vedic_16bit'.
+Current design is 'vedic_16bit'.
+dc_shell> all_inputs
+{a[15] a[14] a[13] a[12] a[11] a[10] a[9] a[8] a[7] a[6] a[5] a[4] a[3] a[2] a[1] a[0] b[15] b[14] b[13] b[12] b[11] b[10] b[9] b[8] b[7] b[6] b[5] b[4] b[3] b[2] b[1] b[0] clk}
+dc_shell> set number_of_inputs [sizeof_collection [all_inputs]]
+33
+dc_shell> all_outputs
+{c[31] c[30] c[29] c[28] c[27] c[26] c[25] c[24] c[23] c[22] c[21] c[20] c[19] c[18] c[17] c[16] c[15] c[14] c[13] c[12] c[11] c[10] c[9] c[8] c[7] c[6] c[5] c[4] c[3] c[2] c[1] c[0]}
+dc_shell> set number_of_outputs [sizeof_collection [all_outputs]]
+32
+dc_shell> report_cell
+Information: Updating graph... (UID-83)
+ 
+****************************************
+Report : cell
+Design : vedic_16bit
+Version: O-2018.06-SP1
+Date   : Mon May  6 18:01:26 2019
+****************************************
+
+Attributes:
+    b - black box (unknown)
+    h - hierarchical
+    n - noncombinational
+    r - removable
+   so - sizing only
+    u - contains unmapped logic
+
+Cell                      Reference       Library             Area  Attributes
+--------------------------------------------------------------------------------
+U2                        an02d0          tsl18fs120_scl_ss
+                                                          15.680000 
+U3                        an02d1          tsl18fs120_scl_ss
+                                                          15.680000 
+U4                        an02d1          tsl18fs120_scl_ss
+                                                          15.680000 
+U5                        an02d1          tsl18fs120_scl_ss
+                                                          15.680000 
+U6                        an02d1          tsl18fs120_scl_ss
+                                                          15.680000 
+U7                        an02d1          tsl18fs120_scl_ss
+                                                          15.680000 
+U8                        an02d1          tsl18fs120_scl_ss
+                                                          15.680000 
+U9                        an02d1          tsl18fs120_scl_ss
+                                                          15.680000 
+U10                       an02d0          tsl18fs120_scl_ss
+                                                          15.680000 
+U11                       an02d1          tsl18fs120_scl_ss
+                                                          15.680000 
+U12                       an02d0          tsl18fs120_scl_ss
+                                                          15.680000 
+U13                       an02d0          tsl18fs120_scl_ss
+                                                          15.680000 
+U14                       an02d0          tsl18fs120_scl_ss
+                                                          15.680000 
+U15                       an02d0          tsl18fs120_scl_ss
+                                                          15.680000 
+U16                       an02d0          tsl18fs120_scl_ss
+                                                          15.680000 
+U17                       an02d0          tsl18fs120_scl_ss
+                                                          15.680000 
+U18                       an02d1          tsl18fs120_scl_ss
+                                                          15.680000 
+U19                       an02d1          tsl18fs120_scl_ss
+                                                          15.680000 
+U20                       an02d0          tsl18fs120_scl_ss
+                                                          15.680000 
+U21                       an02d1          tsl18fs120_scl_ss
+                                                          15.680000 
+U22                       an02d1          tsl18fs120_scl_ss
+                                                          15.680000 
+U23                       an02d1          tsl18fs120_scl_ss
+                                                          15.680000 
+U24                       an02d0          tsl18fs120_scl_ss
+                                                          15.680000 
+U25                       an02d0          tsl18fs120_scl_ss
+                                                          15.680000 
+U26                       an02d1          tsl18fs120_scl_ss
+                                                          15.680000 
+U27                       an02d0          tsl18fs120_scl_ss
+                                                          15.680000 
+U28                       an02d1          tsl18fs120_scl_ss
+                                                          15.680000 
+U29                       an02d1          tsl18fs120_scl_ss
+                                                          15.680000 
+U30                       an02d1          tsl18fs120_scl_ss
+                                                          15.680000 
+U31                       an02d1          tsl18fs120_scl_ss
+                                                          15.680000 
+U32                       an02d1          tsl18fs120_scl_ss
+                                                          15.680000 
+U33                       an02d1          tsl18fs120_scl_ss
+                                                          15.680000 
+U34                       bufbd7          tsl18fs120_scl_ss
+                                                          43.900002 so
+U35                       buffda          tsl18fs120_scl_ss
+                                                          40.770000 so
+U36                       bufbd3          tsl18fs120_scl_ss
+                                                          21.950001 so
+U37                       buffd2          tsl18fs120_scl_ss
+                                                          18.820000 so
+f1                        fa_16bit_0                      2179.450022
+                                                                    h
+f2                        fa_16bit_2                      2239.080015
+                                                                    h
+f3                        fa_16bit_1                      2351.960019
+                                                                    h
+v1                        vedic_8bit_0                    11339.580066
+                                                                    h
+v2                        vedic_8bit_3                    10768.900048
+                                                                    h
+v3                        vedic_8bit_2                    10263.980042
+                                                                    h
+v4                        vedic_8bit_1                    9799.860042
+                                                                    h
+--------------------------------------------------------------------------------
+Total 43 cells                                            49570.010264
+1
+dc_shell> write_file -f verilog -h -o netlist.v
+Writing verilog file '/home/vlsi/Desktop/synopsys_work/vedic_16/netlist.v'.
+1
+dc_shell> write_sdc -nosplit vedic.sdc
+1
+dc_shell> reprt_area
+Error: unknown command 'reprt_area' (CMD-005)
+dc_shell> report_area
+ 
+****************************************
+Report : area
+Design : vedic_16bit
+Version: O-2018.06-SP1
+Date   : Mon May  6 18:05:16 2019
+****************************************
+
+Information: Updating design information... (UID-85)
+Library(s) Used:
+
+    tsl18fs120_scl_ss (File: /home/vlsi/scl_icc/scl_lib/tsl18fs120_scl_ss.db)
+
+Number of ports:                         3775
+Number of nets:                          6460
+Number of cells:                         3221
+Number of combinational cells:           2717
+Number of sequential cells:                21
+Number of macros/black boxes:               0
+Number of buf/inv:                       1160
+Number of references:                      13
+
+Combinational area:              49570.010264
+Buf/Inv area:                    10303.329956
+Noncombinational area:               0.000000
+Macro/Black Box area:                0.000000
+Net Interconnect area:            1069.690919
+
+Total cell area:                 49570.010264
+Total area:                      50639.701183
+1
+dc_shell> report_timing
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : vedic_16bit
+Version: O-2018.06-SP1
+Date   : Mon May  6 18:05:46 2019
+****************************************
+
+Operating Conditions: tsl18fs120_scl_ss   Library: tsl18fs120_scl_ss
+Wire Load Model Mode: top
+
+  Startpoint: a[2] (input port clocked by clk)
+  Endpoint: c[31] (output port clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  vedic_16bit        70000                 tsl18fs120_scl_ss
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     0.35       0.35 r
+  a[2] (in)                                0.00       0.35 r
+  v1/a[2] (vedic_8bit_0)                   0.00       0.35 r
+  v1/v1/a[2] (vedic_4bit_0)                0.00       0.35 r
+  v1/v1/v2/a[0] (vedic_2bit_63)            0.00       0.35 r
+  v1/v1/v2/U11/ZN (nd02d2)                 0.07       0.42 f
+  v1/v1/v2/U1/ZN (xn02d7)                  0.46       0.88 f
+  v1/v1/v2/c[1] (vedic_2bit_63)            0.00       0.88 f
+  v1/v1/f1/b[1] (fa_4bit_0)                0.00       0.88 f
+  v1/v1/f1/f2/b (fa_191)                   0.00       0.88 f
+  v1/v1/f1/f2/U3/CO (cg01d1)               0.36       1.23 f
+  v1/v1/f1/f2/ca (fa_191)                  0.00       1.23 f
+  v1/v1/f1/f3/c (fa_190)                   0.00       1.23 f
+  v1/v1/f1/f3/U6/Z (aoim22d1)              0.30       1.54 f
+  v1/v1/f1/f3/ca (fa_190)                  0.00       1.54 f
+  v1/v1/f1/f4/c (fa_189)                   0.00       1.54 f
+  v1/v1/f1/f4/U5/Z (aoim22d2)              0.30       1.84 f
+  v1/v1/f1/f4/ca (fa_189)                  0.00       1.84 f
+  v1/v1/f1/cout (fa_4bit_0)                0.00       1.84 f
+  v1/v1/f2/cin (fa_4bit_47)                0.00       1.84 f
+  v1/v1/f2/f1/c (fa_188)                   0.00       1.84 f
+  v1/v1/f2/f1/U6/Z (aoim22d2)              0.29       2.13 f
+  v1/v1/f2/f1/ca (fa_188)                  0.00       2.13 f
+  v1/v1/f2/f2/c (fa_187)                   0.00       2.13 f
+  v1/v1/f2/f2/U7/Z (aoim22d1)              0.29       2.41 f
+  v1/v1/f2/f2/ca (fa_187)                  0.00       2.41 f
+  v1/v1/f2/f3/c (fa_186)                   0.00       2.41 f
+  v1/v1/f2/f3/U3/ZN (oaim21d1)             0.27       2.69 f
+  v1/v1/f2/f3/ca (fa_186)                  0.00       2.69 f
+  v1/v1/f2/f4/c (fa_185)                   0.00       2.69 f
+  v1/v1/f2/f4/U3/ZN (oaim22d1)             0.27       2.96 f
+  v1/v1/f2/f4/ca (fa_185)                  0.00       2.96 f
+  v1/v1/f2/cout (fa_4bit_47)               0.00       2.96 f
+  v1/v1/f3/a[2] (fa_4bit_46)               0.00       2.96 f
+  v1/v1/f3/f3/a (fa_182)                   0.00       2.96 f
+  v1/v1/f3/f3/U3/ZN (xn02d4)               0.46       3.43 r
+  v1/v1/f3/f3/U2/ZN (inv0d2)               0.05       3.47 f
+  v1/v1/f3/f3/U5/Z (aor22d2)               0.30       3.77 f
+  v1/v1/f3/f3/ca (fa_182)                  0.00       3.77 f
+  v1/v1/f3/f4/c (fa_181)                   0.00       3.77 f
+  v1/v1/f3/f4/U1/ZN (xn02d2)               0.43       4.20 r
+  v1/v1/f3/f4/s (fa_181)                   0.00       4.20 r
+  v1/v1/f3/sum[3] (fa_4bit_46)             0.00       4.20 r
+  v1/v1/c[7] (vedic_4bit_0)                0.00       4.20 r
+  v1/f1/a[3] (fa_8bit_0)                   0.00       4.20 r
+  v1/f1/f4/a (fa_285)                      0.00       4.20 r
+  v1/f1/f4/U7/Z (an02d1)                   0.24       4.44 r
+  v1/f1/f4/U9/ZN (inv0d1)                  0.08       4.51 f
+  v1/f1/f4/U3/Z (aoim22d2)                 0.36       4.88 r
+  v1/f1/f4/ca (fa_285)                     0.00       4.88 r
+  v1/f1/f5/c (fa_284)                      0.00       4.88 r
+  v1/f1/f5/U3/Z (aoim22d2)                 0.18       5.06 r
+  v1/f1/f5/ca (fa_284)                     0.00       5.06 r
+  v1/f1/f6/c (fa_283)                      0.00       5.06 r
+  v1/f1/f6/U8/Z (aoim22d1)                 0.27       5.33 r
+  v1/f1/f6/ca (fa_283)                     0.00       5.33 r
+  v1/f1/f7/c (fa_282)                      0.00       5.33 r
+  v1/f1/f7/U6/Z (aoim22d1)                 0.33       5.65 r
+  v1/f1/f7/ca (fa_282)                     0.00       5.65 r
+  v1/f1/f8/c (fa_281)                      0.00       5.65 r
+  v1/f1/f8/U5/Z (aoim22d1)                 0.32       5.97 r
+  v1/f1/f8/ca (fa_281)                     0.00       5.97 r
+  v1/f1/cout (fa_8bit_0)                   0.00       5.97 r
+  v1/f2/cin (fa_8bit_11)                   0.00       5.97 r
+  v1/f2/f1/c (fa_280)                      0.00       5.97 r
+  v1/f2/f1/U3/ZN (oaim21d1)                0.29       6.27 r
+  v1/f2/f1/ca (fa_280)                     0.00       6.27 r
+  v1/f2/f2/c (fa_279)                      0.00       6.27 r
+  v1/f2/f2/U8/Z (aoim22d2)                 0.22       6.48 r
+  v1/f2/f2/ca (fa_279)                     0.00       6.48 r
+  v1/f2/f3/c (fa_278)                      0.00       6.48 r
+  v1/f2/f3/U7/Z (aoim22d2)                 0.18       6.67 r
+  v1/f2/f3/ca (fa_278)                     0.00       6.67 r
+  v1/f2/f4/c (fa_277)                      0.00       6.67 r
+  v1/f2/f4/U1/ZN (invbd2)                  0.07       6.74 f
+  v1/f2/f4/U6/Z (aoim22d1)                 0.21       6.96 r
+  v1/f2/f4/ca (fa_277)                     0.00       6.96 r
+  v1/f2/f5/c (fa_276)                      0.00       6.96 r
+  v1/f2/f5/U5/Z (aoim22d2)                 0.24       7.20 r
+  v1/f2/f5/ca (fa_276)                     0.00       7.20 r
+  v1/f2/f6/c (fa_275)                      0.00       7.20 r
+  v1/f2/f6/U5/Z (aoim22d2)                 0.19       7.39 r
+  v1/f2/f6/ca (fa_275)                     0.00       7.39 r
+  v1/f2/f7/c (fa_274)                      0.00       7.39 r
+  v1/f2/f7/U1/ZN (oaim22d1)                0.34       7.73 r
+  v1/f2/f7/ca (fa_274)                     0.00       7.73 r
+  v1/f2/f8/c (fa_273)                      0.00       7.73 r
+  v1/f2/f8/U2/Z (xr03d2)                   0.40       8.13 f
+  v1/f2/f8/s (fa_273)                      0.00       8.13 f
+  v1/f2/sum[7] (fa_8bit_11)                0.00       8.13 f
+  v1/f3/a[3] (fa_8bit_10)                  0.00       8.13 f
+  v1/f3/f4/a (fa_269)                      0.00       8.13 f
+  v1/f3/f4/U6/ZN (xn02d2)                  0.34       8.47 f
+  v1/f3/f4/U4/Z (aor22d2)                  0.30       8.77 f
+  v1/f3/f4/ca (fa_269)                     0.00       8.77 f
+  v1/f3/f5/c (fa_268)                      0.00       8.77 f
+  v1/f3/f5/U6/ZN (inv0d2)                  0.08       8.84 r
+  v1/f3/f5/U5/ZN (oai22d2)                 0.26       9.10 f
+  v1/f3/f5/ca (fa_268)                     0.00       9.10 f
+  v1/f3/f6/c (fa_267)                      0.00       9.10 f
+  v1/f3/f6/U4/ZN (xn02d2)                  0.45       9.56 r
+  v1/f3/f6/s (fa_267)                      0.00       9.56 r
+  v1/f3/sum[5] (fa_8bit_10)                0.00       9.56 r
+  v1/c[13] (vedic_8bit_0)                  0.00       9.56 r
+  f1/a[5] (fa_16bit_0)                     0.00       9.56 r
+  f1/f6/a (fa_331)                         0.00       9.56 r
+  f1/f6/U1/ZN (inv0d2)                     0.07       9.63 f
+  f1/f6/U4/ZN (nd02d2)                     0.09       9.72 r
+  f1/f6/U10/ZN (nd02d2)                    0.07       9.79 f
+  f1/f6/U12/Z (aoim22d1)                   0.27      10.06 f
+  f1/f6/ca (fa_331)                        0.00      10.06 f
+  f1/f7/c (fa_330)                         0.00      10.06 f
+  f1/f7/U6/Z (aoim22d1)                    0.29      10.35 f
+  f1/f7/ca (fa_330)                        0.00      10.35 f
+  f1/f8/c (fa_329)                         0.00      10.35 f
+  f1/f8/U9/Z (aoim22d1)                    0.29      10.63 f
+  f1/f8/ca (fa_329)                        0.00      10.63 f
+  f1/f9/c (fa_328)                         0.00      10.63 f
+  f1/f9/U3/Z (aoim22d1)                    0.30      10.93 f
+  f1/f9/ca (fa_328)                        0.00      10.93 f
+  f1/f10/c (fa_327)                        0.00      10.93 f
+  f1/f10/U5/Z (aoim22d2)                   0.30      11.22 f
+  f1/f10/ca (fa_327)                       0.00      11.22 f
+  f1/f11/c (fa_326)                        0.00      11.22 f
+  f1/f11/U6/Z (aoim22d1)                   0.28      11.51 f
+  f1/f11/ca (fa_326)                       0.00      11.51 f
+  f1/f12/c (fa_325)                        0.00      11.51 f
+  f1/f12/U3/Z (aoim22d2)                   0.30      11.81 f
+  f1/f12/ca (fa_325)                       0.00      11.81 f
+  f1/f13/c (fa_324)                        0.00      11.81 f
+  f1/f13/U3/Z (aoim22d1)                   0.28      12.08 f
+  f1/f13/ca (fa_324)                       0.00      12.08 f
+  f1/f14/c (fa_323)                        0.00      12.08 f
+  f1/f14/U7/Z (aoim22d1)                   0.29      12.37 f
+  f1/f14/ca (fa_323)                       0.00      12.37 f
+  f1/f15/c (fa_322)                        0.00      12.37 f
+  f1/f15/U6/Z (aoim22d1)                   0.29      12.66 f
+  f1/f15/ca (fa_322)                       0.00      12.66 f
+  f1/f16/c (fa_321)                        0.00      12.66 f
+  f1/f16/U2/Z (aoim22d1)                   0.29      12.95 f
+  f1/f16/ca (fa_321)                       0.00      12.95 f
+  f1/cout (fa_16bit_0)                     0.00      12.95 f
+  f2/cin (fa_16bit_2)                      0.00      12.95 f
+  f2/f1/c (fa_320)                         0.00      12.95 f
+  f2/f1/U1/Z (aoim22d2)                    0.30      13.25 f
+  f2/f1/ca (fa_320)                        0.00      13.25 f
+  f2/f2/c (fa_319)                         0.00      13.25 f
+  f2/f2/U1/ZN (invbd2)                     0.07      13.32 r
+  f2/f2/U5/Z (aoim22d1)                    0.08      13.40 f
+  f2/f2/ca (fa_319)                        0.00      13.40 f
+  f2/f3/c (fa_318)                         0.00      13.40 f
+  f2/f3/U7/Z (aoim22d2)                    0.30      13.70 f
+  f2/f3/ca (fa_318)                        0.00      13.70 f
+  f2/f4/c (fa_317)                         0.00      13.70 f
+  f2/f4/U4/Z (aoim22d2)                    0.29      13.99 f
+  f2/f4/ca (fa_317)                        0.00      13.99 f
+  f2/f5/c (fa_316)                         0.00      13.99 f
+  f2/f5/U7/Z (aoim22d2)                    0.29      14.28 f
+  f2/f5/ca (fa_316)                        0.00      14.28 f
+  f2/f6/c (fa_315)                         0.00      14.28 f
+  f2/f6/U7/Z (aoim22d2)                    0.29      14.57 f
+  f2/f6/ca (fa_315)                        0.00      14.57 f
+  f2/f7/c (fa_314)                         0.00      14.57 f
+  f2/f7/U1/ZN (invbd2)                     0.07      14.64 r
+  f2/f7/U4/Z (aoim22d1)                    0.08      14.72 f
+  f2/f7/ca (fa_314)                        0.00      14.72 f
+  f2/f8/c (fa_313)                         0.00      14.72 f
+  f2/f8/U5/ZN (invbd2)                     0.08      14.80 r
+  f2/f8/U7/Z (aoim22d1)                    0.09      14.89 f
+  f2/f8/ca (fa_313)                        0.00      14.89 f
+  f2/f9/c (fa_312)                         0.00      14.89 f
+  f2/f9/U6/Z (aoim22d2)                    0.31      15.20 f
+  f2/f9/ca (fa_312)                        0.00      15.20 f
+  f2/f10/c (fa_311)                        0.00      15.20 f
+  f2/f10/U3/Z (aor22d2)                    0.24      15.44 f
+  f2/f10/ca (fa_311)                       0.00      15.44 f
+  f2/f11/c (fa_310)                        0.00      15.44 f
+  f2/f11/U2/ZN (xn02d2)                    0.35      15.79 f
+  f2/f11/s (fa_310)                        0.00      15.79 f
+  f2/sum[10] (fa_16bit_2)                  0.00      15.79 f
+  f3/a[2] (fa_16bit_1)                     0.00      15.79 f
+  f3/f3/a (fa_302)                         0.00      15.79 f
+  f3/f3/U3/ZN (xn02d2)                     0.40      16.18 r
+  f3/f3/U5/Z (aoim22d2)                    0.30      16.48 f
+  f3/f3/ca (fa_302)                        0.00      16.48 f
+  f3/f4/c (fa_301)                         0.00      16.48 f
+  f3/f4/U5/Z (aoim22d1)                    0.28      16.76 f
+  f3/f4/ca (fa_301)                        0.00      16.76 f
+  f3/f5/c (fa_300)                         0.00      16.76 f
+  f3/f5/U6/Z (aoim22d2)                    0.30      17.06 f
+  f3/f5/ca (fa_300)                        0.00      17.06 f
+  f3/f6/c (fa_299)                         0.00      17.06 f
+  f3/f6/U1/ZN (invbd2)                     0.07      17.13 r
+  f3/f6/U12/Z (aoim22d1)                   0.08      17.21 f
+  f3/f6/ca (fa_299)                        0.00      17.21 f
+  f3/f7/c (fa_298)                         0.00      17.21 f
+  f3/f7/U7/Z (aoim22d1)                    0.29      17.49 f
+  f3/f7/ca (fa_298)                        0.00      17.49 f
+  f3/f8/c (fa_297)                         0.00      17.49 f
+  f3/f8/U10/Z (aoim22d1)                   0.28      17.78 f
+  f3/f8/ca (fa_297)                        0.00      17.78 f
+  f3/f9/c (fa_296)                         0.00      17.78 f
+  f3/f9/U3/ZN (oaim21d1)                   0.25      18.03 f
+  f3/f9/ca (fa_296)                        0.00      18.03 f
+  f3/f10/c (fa_295)                        0.00      18.03 f
+  f3/f10/U5/Z (aoim22d2)                   0.30      18.33 f
+  f3/f10/ca (fa_295)                       0.00      18.33 f
+  f3/f11/c (fa_294)                        0.00      18.33 f
+  f3/f11/U2/Z (aoim22d2)                   0.29      18.62 f
+  f3/f11/ca (fa_294)                       0.00      18.62 f
+  f3/f12/c (fa_293)                        0.00      18.62 f
+  f3/f12/U1/ZN (invbd2)                    0.07      18.69 r
+  f3/f12/U4/Z (aoim22d1)                   0.08      18.77 f
+  f3/f12/ca (fa_293)                       0.00      18.77 f
+  f3/f13/c (fa_292)                        0.00      18.77 f
+  f3/f13/U5/ZN (invbd2)                    0.08      18.85 r
+  f3/f13/U6/Z (aoim22d1)                   0.09      18.93 f
+  f3/f13/ca (fa_292)                       0.00      18.93 f
+  f3/f14/c (fa_291)                        0.00      18.93 f
+  f3/f14/U4/Z (aoim22d2)                   0.30      19.23 f
+  f3/f14/ca (fa_291)                       0.00      19.23 f
+  f3/f15/c (fa_290)                        0.00      19.23 f
+  f3/f15/U2/Z (aoim22d2)                   0.30      19.53 f
+  f3/f15/ca (fa_290)                       0.00      19.53 f
+  f3/f16/c (fa_289)                        0.00      19.53 f
+  f3/f16/U1/ZN (xn02d1)                    0.37      19.90 r
+  f3/f16/s (fa_289)                        0.00      19.90 r
+  f3/sum[15] (fa_16bit_1)                  0.00      19.90 r
+  U9/Z (an02d1)                            0.15      20.05 r
+  c[31] (out)                              0.00      20.05 r
+  data arrival time                                  20.05
+
+  clock clk (rise edge)                    1.00       1.00
+  clock network delay (ideal)              0.00       1.00
+  output external delay                   -0.50       0.50
+  data required time                                  0.50
+  -----------------------------------------------------------
+  data required time                                  0.50
+  data arrival time                                 -20.05
+  -----------------------------------------------------------
+  slack (VIOLATED)                                  -19.55
+
+
+1
+dc_shell> report_power
+Loading db file '/home/vlsi/scl_icc/scl_lib/tsl18fs120_scl_ss.db'
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: Design has unannotated primary inputs. (PWR-414)
+ 
+****************************************
+Report : power
+        -analysis_effort low
+Design : vedic_16bit
+Version: O-2018.06-SP1
+Date   : Mon May  6 18:07:21 2019
+****************************************
+
+
+Library(s) Used:
+
+    tsl18fs120_scl_ss (File: /home/vlsi/scl_icc/scl_lib/tsl18fs120_scl_ss.db)
+
+
+Operating Conditions: tsl18fs120_scl_ss   Library: tsl18fs120_scl_ss
+Wire Load Model Mode: top
+
+Design        Wire Load Model            Library
+------------------------------------------------
+vedic_16bit            70000             tsl18fs120_scl_ss
+
+
+Global Operating Voltage = 1.62 
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000pf
+    Time Units = 1ns
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1pW
+
+
+  Cell Internal Power  =  10.8128 mW   (52%)
+  Net Switching Power  =  10.0884 mW   (48%)
+                         ---------
+Total Dynamic Power    =  20.9012 mW  (100%)
+
+Cell Leakage Power     = 861.4649 nW
+
+
+                 Internal         Switching           Leakage            Total
+Power Group      Power            Power               Power              Power   (   %    )  Attrs
+--------------------------------------------------------------------------------------------------
+io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
+clock_network      1.0168            1.0495        1.3212e+04            2.0663  (   9.89%)
+register           0.0000            0.0000            0.0000            0.0000  (   0.00%)
+sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
+combinational      9.7960            9.0388        8.4825e+05           18.8357  (  90.11%)
+--------------------------------------------------------------------------------------------------
+Total             10.8128 mW        10.0884 mW     8.6146e+05 pW        20.9020 mW
+1
+dc_shell> report_hierarrchy
+Error: unknown command 'report_hierarrchy' (CMD-005)
+dc_shell> report_hierarchy
+ 
+****************************************
+Report : hierarchy
+Design : vedic_16bit
+Version: O-2018.06-SP1
+Date   : Mon May  6 18:08:46 2019
+****************************************
+
+vedic_16bit
+    an02d0                           tsl18fs120_scl_ss
+    an02d1                           tsl18fs120_scl_ss
+    bufbd3                           tsl18fs120_scl_ss
+    bufbd7                           tsl18fs120_scl_ss
+    buffd2                           tsl18fs120_scl_ss
+    buffda                           tsl18fs120_scl_ss
+    fa_16bit_0
+        fa_0
+            inv0d0                   tsl18fs120_scl_ss
+            inv0d1                   tsl18fs120_scl_ss
+            oaim22d1                 tsl18fs120_scl_ss
+            xn02d1                   tsl18fs120_scl_ss
+            xr02d1                   tsl18fs120_scl_ss
+        fa_321
+            aoim22d1                 tsl18fs120_scl_ss
+            inv0d0                   tsl18fs120_scl_ss
+            nd02d0                   tsl18fs120_scl_ss
+            xn02d1                   tsl18fs120_scl_ss
+            xr02d1                   tsl18fs120_scl_ss
+        fa_322
+            aoim22d1                 tsl18fs120_scl_ss
+            buffd1                   tsl18fs120_scl_ss
+            inv0d0                   tsl18fs120_scl_ss
+            inv0d1                   tsl18fs120_scl_ss
+            nd02d0                   tsl18fs120_scl_ss
+            xn02d2                   tsl18fs120_scl_ss
+            xr02d1                   tsl18fs120_scl_ss
+        fa_323
+            an02d1                   tsl18fs120_scl_ss
+            aoim22d1                 tsl18fs120_scl_ss
+            buffd1                   tsl18fs120_scl_ss
+            inv0d0                   tsl18fs120_scl_ss
+            xn02d2                   tsl18fs120_scl_ss
+            xr02d1                   tsl18fs120_scl_ss
+        fa_324
+            aoim22d1                 tsl18fs120_scl_ss
+            buffd1                   tsl18fs120_scl_ss
+            inv0d0                   tsl18fs120_scl_ss
+            inv0d1                   tsl18fs120_scl_ss
+            nd02d0                   tsl18fs120_scl_ss
+            xn02d1                   tsl18fs120_scl_ss
+            xr02d1                   tsl18fs120_scl_ss
+        fa_325
+            an02d1                   tsl18fs120_scl_ss
+            aoim22d2                 tsl18fs120_scl_ss
+            buffd1                   tsl18fs120_scl_ss
+            inv0d0                   tsl18fs120_scl_ss
+            xn02d1                   tsl18fs120_scl_ss
+            xr02d1                   tsl18fs120_scl_ss
+        fa_326
+            an02d1                   tsl18fs120_scl_ss
+            aoim22d1                 tsl18fs120_scl_ss
+            buffd1                   tsl18fs120_scl_ss
+            inv0d0                   tsl18fs120_scl_ss
+            xn02d1                   tsl18fs120_scl_ss
+            xr02d1                   tsl18fs120_scl_ss
+        fa_327
+            an02d1                   tsl18fs120_scl_ss
+            aoim22d2                 tsl18fs120_scl_ss
+            inv0d0                   tsl18fs120_scl_ss
+            xn02d2                   tsl18fs120_scl_ss
+            xr02d1                   tsl18fs120_scl_ss
+        fa_328
+            an02d1                   tsl18fs120_scl_ss
+            aoim22d1                 tsl18fs120_scl_ss
+            buffd1                   tsl18fs120_scl_ss
+            inv0d0                   tsl18fs120_scl_ss
+            xn02d1                   tsl18fs120_scl_ss
+            xr02d1                   tsl18fs120_scl_ss
+        fa_329
+            aoim22d1                 tsl18fs120_scl_ss
+            buffd1                   tsl18fs120_scl_ss
+            inv0d0                   tsl18fs120_scl_ss
+            inv0d1                   tsl18fs120_scl_ss
+            inv0d2                   tsl18fs120_scl_ss
+            nd02d2                   tsl18fs120_scl_ss
+            xn02d1                   tsl18fs120_scl_ss
+        fa_330
+            an02d4                   tsl18fs120_scl_ss
+            aoim22d1                 tsl18fs120_scl_ss
+            buffd1                   tsl18fs120_scl_ss
+            inv0d1                   tsl18fs120_scl_ss
+            xn02d1                   tsl18fs120_scl_ss
+            xn02d2                   tsl18fs120_scl_ss
+        fa_331
+            aoim22d1                 tsl18fs120_scl_ss
+            inv0d0                   tsl18fs120_scl_ss
+            inv0d2                   tsl18fs120_scl_ss
+            invbd2                   tsl18fs120_scl_ss
+            nd02d2                   tsl18fs120_scl_ss
+            nd12d2                   tsl18fs120_scl_ss
+            xn02d1                   tsl18fs120_scl_ss
+            xr02d1                   tsl18fs120_scl_ss
+        fa_332
+            aoim22d2                 tsl18fs120_scl_ss
+            inv0d1                   tsl18fs120_scl_ss
+            nd02d0                   tsl18fs120_scl_ss
+            nd02d1                   tsl18fs120_scl_ss
+            nd02d2                   tsl18fs120_scl_ss
+            xn02d2                   tsl18fs120_scl_ss
+        fa_333
+            buffd1                   tsl18fs120_scl_ss
+            cg01d1                   tsl18fs120_scl_ss
+            xr02d1                   tsl18fs120_scl_ss
+        fa_334
+            an12d1                   tsl18fs120_scl_ss
+            inv0d0                   tsl18fs120_scl_ss
+            oaim21d1                 tsl18fs120_scl_ss
+            xr02d1                   tsl18fs120_scl_ss
+        fa_335
+            aor22d2                  tsl18fs120_scl_ss
+            buffd1                   tsl18fs120_scl_ss
+            invbd2                   tsl18fs120_scl_ss
+            xn02d2                   tsl18fs120_scl_ss
+            xr02d1                   tsl18fs120_scl_ss
+    fa_16bit_1
+        fa_289
+            inv0d0                   tsl18fs120_scl_ss
+            oai22d1                  tsl18fs120_scl_ss
+            xn02d1                   tsl18fs120_scl_ss
+            xr02d1                   tsl18fs120_scl_ss
+        fa_290
+            aoim22d2                 tsl18fs120_scl_ss
+            buffd1                   tsl18fs120_scl_ss
+            inv0d0                   tsl18fs120_scl_ss
+            nd02d0                   tsl18fs120_scl_ss
+            xn02d1                   tsl18fs120_scl_ss
+        fa_291
+            aoim22d2                 tsl18fs120_scl_ss
+            inv0d0                   tsl18fs120_scl_ss
+            inv0d1                   tsl18fs120_scl_ss
+            nd02d1                   tsl18fs120_scl_ss
+            xn02d1                   tsl18fs120_scl_ss
+        fa_292
+            aoim22d1                 tsl18fs120_scl_ss
+            inv0d0                   tsl18fs120_scl_ss
+            inv0d2                   tsl18fs120_scl_ss
+            invbd2                   tsl18fs120_scl_ss
+            nd02d0                   tsl18fs120_scl_ss
+            xn02d1                   tsl18fs120_scl_ss
+            xn02d7                   tsl18fs120_scl_ss
+        fa_293
+            aoim22d1                 tsl18fs120_scl_ss
+            inv0d0                   tsl18fs120_scl_ss
+            invbd2                   tsl18fs120_scl_ss
+            invbdk                   tsl18fs120_scl_ss
+            nd02d4                   tsl18fs120_scl_ss
+            xn02d1                   tsl18fs120_scl_ss
+        fa_294
+            aoim22d2                 tsl18fs120_scl_ss
+            inv0d0                   tsl18fs120_scl_ss
+            nd02d1                   tsl18fs120_scl_ss
+            xn02d1                   tsl18fs120_scl_ss
+            xr02d1                   tsl18fs120_scl_ss
+        fa_295
+            aoim22d2                 tsl18fs120_scl_ss
+            buffd1                   tsl18fs120_scl_ss
+            inv0d0                   tsl18fs120_scl_ss
+            inv0d1                   tsl18fs120_scl_ss
+            nd02d0                   tsl18fs120_scl_ss
+            xn02d1                   tsl18fs120_scl_ss
+        fa_296
+            buffd1                   tsl18fs120_scl_ss
+            inv0d1                   tsl18fs120_scl_ss
+            nd02d1                   tsl18fs120_scl_ss
+            oaim21d1                 tsl18fs120_scl_ss
+            xn02d1                   tsl18fs120_scl_ss
+            xn02d2                   tsl18fs120_scl_ss
+        fa_297
+            aoim22d1                 tsl18fs120_scl_ss
+            buffd1                   tsl18fs120_scl_ss
+            inv0d1                   tsl18fs120_scl_ss
+            inv0d2                   tsl18fs120_scl_ss
+            nd02d0                   tsl18fs120_scl_ss
+            nd02d2                   tsl18fs120_scl_ss
+            xn02d1                   tsl18fs120_scl_ss
+        fa_298
+            aoim22d1                 tsl18fs120_scl_ss
+            buffd1                   tsl18fs120_scl_ss
+            inv0d0                   tsl18fs120_scl_ss
+            inv0d1                   tsl18fs120_scl_ss
+            nd12d2                   tsl18fs120_scl_ss
+            xn02d2                   tsl18fs120_scl_ss
+        fa_299
+            aoim22d1                 tsl18fs120_scl_ss
+            inv0d0                   tsl18fs120_scl_ss
+            inv0d1                   tsl18fs120_scl_ss
+            inv0d2                   tsl18fs120_scl_ss
+            invbd2                   tsl18fs120_scl_ss
+            nd02d1                   tsl18fs120_scl_ss
+            nd02d2                   tsl18fs120_scl_ss
+            nr02d2                   tsl18fs120_scl_ss
+            xr02d1                   tsl18fs120_scl_ss
+        fa_300
+            aoim22d2                 tsl18fs120_scl_ss
+            buffd1                   tsl18fs120_scl_ss
+            inv0d1                   tsl18fs120_scl_ss
+            nd02d1                   tsl18fs120_scl_ss
+            xn02d1                   tsl18fs120_scl_ss
+            xn02d2                   tsl18fs120_scl_ss
+        fa_301
+            aoim22d1                 tsl18fs120_scl_ss
+            buffd1                   tsl18fs120_scl_ss
+            inv0d2                   tsl18fs120_scl_ss
+            nd02d1                   tsl18fs120_scl_ss
+            xn02d2                   tsl18fs120_scl_ss
+        fa_302
+            aoim22d2                 tsl18fs120_scl_ss
+            buffd1                   tsl18fs120_scl_ss
+            inv0d0                   tsl18fs120_scl_ss
+            inv0d1                   tsl18fs120_scl_ss
+            nd02d0                   tsl18fs120_scl_ss
+            xn02d2                   tsl18fs120_scl_ss
+            xr02d1                   tsl18fs120_scl_ss
+        fa_303
+            aoim22d1                 tsl18fs120_scl_ss
+            buffd1                   tsl18fs120_scl_ss
+            inv0d1                   tsl18fs120_scl_ss
+            nd02d2                   tsl18fs120_scl_ss
+            xn02d1                   tsl18fs120_scl_ss
+            xn02d2                   tsl18fs120_scl_ss
+        fa_304
+            inv0d0                   tsl18fs120_scl_ss
+            inv0d2                   tsl18fs120_scl_ss
+            oai22d1                  tsl18fs120_scl_ss
+            xn02d1                   tsl18fs120_scl_ss
+            xr02d1                   tsl18fs120_scl_ss
+    fa_16bit_2
+        fa_305
+            inv0d0                   tsl18fs120_scl_ss
+            inv0d1                   tsl18fs120_scl_ss
+            inv0d2                   tsl18fs120_scl_ss
+            nd02d1                   tsl18fs120_scl_ss
+            nd02d2                   tsl18fs120_scl_ss
+            oai22d1                  tsl18fs120_scl_ss
+dc_shell> 

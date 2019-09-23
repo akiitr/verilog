@@ -1,0 +1,142 @@
+module alu(a,b,control,clk, y);
+    input a,b,control,clk;
+    output y;
+	 reg y;
+	 always @(posedge clk)
+	 begin
+	 case (control)
+	 0:y=a^b;
+	 1:y=a&b;
+	 endcase
+	 end
+
+endmodule
+module alut_v;
+
+	// Inputs
+	reg a;
+	reg b;
+	reg control;
+	reg clk;
+
+	// Outputs
+	wire y;
+
+	// Instantiate the Unit Under Test (UUT)
+	alu uut (
+		.a(a), 
+		.b(b), 
+		.control(control), 
+		.clk(clk), 
+		.y(y)
+	);
+initial
+clk=1;
+always
+#5 clk=~clk;
+	initial begin
+		// Initialize Inputs
+		a = 1;
+		b = 0;
+		control = 0;
+	#10 control=1;	
+
+		// Wait 100 ns for global reset to finish
+		#10 $stop;
+        
+		// Add stimulus here
+
+	end
+      
+endmodule
+
+
+
+
+module alu4(a,b,control,clk, y);
+    input [3:0]a,b;
+	 input [4:0]control;
+	 input clk;
+    output [3:0]y;
+	 reg [3:0]y;
+	 always @(posedge clk)
+	 begin
+	 case (control)
+	 5'b00000:y=a+b;
+	 5'b00001:y=a-b;
+	 5'b00010:y=a*b;
+	 5'b00011:y=a/b;
+	 5'b00100:y=a>b;
+	 5'b00101:y=a<b;
+	 5'b00110:y=>>a;
+	 5'b00111:y=<<a;
+	 5'b01000:y=>>>a;
+	 5'b01001:y=<<<a;
+	 5'b01010:y=(a>=b);
+	 5'b01011:y=(a<=b);
+	 5'b01100:y=a&b
+	 5'b01101:y=a|b;
+	 5'b01110:y=a^b;
+	 5'b01111:y=~(a&b);
+	 5'b10000:y=~(a|b);
+	 5'b10001:y=~(a^b);
+	 5'b10010:y=~a;
+	 5'b10011:y=~(^b);
+	 5'b10100:y=(a==b);
+	 5'b10101:y=(a===b);
+	 5'b10110:y=(a!=b)
+	 5'b10111:y=(a!=b);
+	 5'b11000:y={a,b};
+	 5'b11001:y={2{a},3{b}};
+	 5'b11010:y=a%b;
+	 5'b11011:y=a&&b;
+	 5'b11100:y=a||b;
+	 5'b11101:y=&a;
+	 5'b11110:y=|a;
+	 5'b11111:y=^a;
+	 endcase
+	 end
+	 
+
+
+endmodule
+
+
+
+
+
+module alu4t_v;
+
+	// Inputs
+	reg [3:0] a;
+	reg [3:0] b;
+	reg [4:0] control;
+	reg clk;
+
+	// Outputs
+	wire [3:0] y;
+
+	// Instantiate the Unit Under Test (UUT)
+	alu4 uut (
+		.a(a), 
+		.b(b), 
+		.control(control), 
+		.clk(clk), 
+		.y(y)
+	);
+	initial
+	clk=0;
+	always 
+	#5 clk=~clk;
+	initial begin
+		// Initialize Inputs
+		a = 4'b0001;
+		b = 4'b1000;
+		control = 5'b00000;
+      forever control=control+5'b00001;
+		
+      #200 $stop;
+	
+	end
+      
+endmodule

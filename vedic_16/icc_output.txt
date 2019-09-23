@@ -1,0 +1,2106 @@
+[                Init] CPU =    0:00:00, gr_data VM =        0 M
+                   Elapsed =    0:00:00, total   VM =       94 M
+Routing User Options:
+SplitTimer = 1
+PortSingleConn = 0
+ViaExtraCostByLength = 0
+ReadPlanGroup = 0
+GaTimingFileMode = 0
+Global Routing User Options:
+speed = 2
+mapOnly = 0
+accessPolyPin = 1
+congestionWeight = 4
+netCriticality = 1
+timingDriven = 0
+timingWeight = 4
+avoidXtalk = 0
+xtalkWeight = 4
+ignoreViaBlockage = 1
+clockBalanced = 1
+clockBalancedAuto = 0
+clockComb = 0
+combDistance = 2
+skewControl = 0
+skewControlWeight = 5
+skewControlNetBBLowBound = 5
+avoidCouplingUser = 0
+horReserveTracks = 2
+verReserveTracks = 2
+blockEdgeAccess = 1
+extraWireLengthOpt = 1
+compactMode = 1
+turboMode = 1
+maxDetourPercent = -1
+detourLimitMinNetLen = 0
+incremental = 0
+unGroutedNetsOnly = 0
+extraCostsApplyPercent = 50
+rcOptByLength = 1
+powerDriven = 0
+densityDriven = 0
+topLayerWidePitch = 1
+topLayerGrcDimAdjust = 4
+topLayerCostAdjust = 5
+Begin global routing.
+Reading database ... 
+Error: It is not recommended to use classic router commands after Zroute commands. (RT-302)
+********* router params **********
+** Layer Extra Cost:
+  layerExtraCostByRC : 0
+  (polyCont,via1, .. ,via14)ExtraCost :  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+  (poly,m1, .. ,m15)ExtraCost :  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+********* router params **********
+Using [2 x 2] Fat Wire Table for M1
+
+Using [2 x 2] Fat Wire Table for M2
+
+Using [2 x 2] Fat Wire Table for M3
+
+Using [2 x 2] Fat Wire Table for TOP_M
+
+
+ Add [VL] 's rotated via as default via on Lay TOP_V 
+
+ Add [V3_cross] 's rotated via as default via on Lay V3 
+
+ Add [V2_cross] 's rotated via as default via on Lay V2 
+Select via(VL) as the default for layer(TOP_V)
+
+	Alternate via(VL-R) for layer(TOP_V)
+Select via(V3_cross) as the default for layer(V3)
+
+	Alternate via(V3_cross-R) for layer(V3)
+	Alternate via(V3-R) for layer(V3)
+	Alternate via(V3) for layer(V3)
+Select via(V2_cross) as the default for layer(V2)
+
+	Alternate via(V2_cross-R) for layer(V2)
+	Alternate via(V2-R) for layer(V2)
+	Alternate via(V2) for layer(V2)
+Reading spacing rules from lib properties (create_lib_property)
+
+Reading wire end grids from technolgy file
+
+Reading jog to jog spacing from technology file
+POWER Net (VDD)
+GROUND Net (VSS)
+Warning: Cell contains tie connections which are not connected to real PG. (MW-349)
+release 6 cache blocks
+There are NO POLY pins
+# Masters = 52 , # Instances = 3028 , # Nets = 3083
+
+# Routing Layers = 4 , Maximum Pitch = 1120 [X:1120, Y:660]m(1120,660)
+Max. FatWireThreshold = 10600
+  wire Layer[0] = M1 (H,1,1)
+  cut  Layer[1] = V2
+  wire Layer[1] = M2 (V,1,0)
+  cut  Layer[2] = V3
+  wire Layer[2] = M3 (H,1,0)
+  cut  Layer[3] = TOP_V
+  wire Layer[3] = TOP_M (V,1,0)
+GRC-Dim: (5600,5600)
+[VL] and [V3_cross] stacking is allowed
+
+[V3_cross] and [V2_cross] stacking is allowed
+
+Layer (M1) pitch (0.560) : wire-via(0.485) via-via(0.510)
+Layer (TOP_M) pitch (1.120) : wire-via(0.950) via-via(1.000)
+[      End of Read DB] CPU =    0:00:00, gr_data VM =        7 M
+                   Elapsed =    0:00:00, total   VM =      102 M
+Constructing data structure ... 
+
+Number of plan groups = 0
+Number of voltage areas = 0
+user unit = 1000 db unit.
+db min Grid = 5 db unit.
+Design Bounding Box (0.00 0.00) (285.44 283.20)
+layer M1, dir Hor, min width = 0.23, min space = 0.23, pitch = 0.56
+layer M2, dir Ver, min width = 0.28, min space = 0.28, pitch = 0.56
+layer M3, dir Hor, min width = 0.28, min space = 0.28, pitch = 0.66
+layer TOP_M, dir Ver, min width = 0.44, min space = 0.46, pitch = 1.12
+Number of routing layers = 4.
+track info for layer(M1):
+Number of X routing tracks = 510.
+X Track min 0.20 max 285.24, Ave. track dist = 0.56
+Number of Y routing tracks = 505.
+Y Track min 0.48 max 282.72, Ave. track dist = 0.56
+track info for layer(M2):
+Number of X routing tracks = 510.
+X Track min 0.20 max 285.24, Ave. track dist = 0.56
+Number of Y routing tracks = 918.
+Y Track min 0.48 max 282.72, Ave. track dist = 0.31
+track info for layer(M3):
+Number of X routing tracks = 763.
+X Track min 0.20 max 285.24, Ave. track dist = 0.37
+Number of Y routing tracks = 428.
+Y Track min 0.76 max 282.58, Ave. track dist = 0.66
+track info for layer(TOP_M):
+Number of X routing tracks = 255.
+X Track min 0.20 max 285.24, Ave. track dist = 1.12
+Number of Y routing tracks = 428.
+Y Track min 0.76 max 282.58, Ave. track dist = 0.66
+Creating uniform X GGrids ...
+Creating uniform Y GGrids ...
+Number of X global grids = 52.
+Number of Y global grids = 52.
+X global grid min 0.00 max 286.44, Ave. ggrid dist = 5.62
+Y global grid min 0.00 max 284.20, Ave. ggrid dist = 5.57
+zqlNoMazeInBlockedArea = T
+[End of Build Blockage] CPU =    0:00:00, gr_data VM =        8 M
+                   Elapsed =    0:00:00, total   VM =      102 M
+allow wrong dir = 0, weight = 4
+turbo speed = 2
+turbo min dist = 8
+compact param = 1
+Extra wire cost M1 = 0
+Extra wire cost M2 = 0
+Extra wire cost M3 = 0
+Extra wire cost TOP_M = 0
+Extra via cost V2 = 0
+Extra via cost V3 = 0
+Extra via cost TOP_V = 0
+[End of Build Layer Cost Table] CPU =    0:00:00, gr_data VM =        8 M
+                   Elapsed =    0:00:00, total   VM =      103 M
+Number of instances = 3028.
+Number of signal/clock nets = 3081.
+Number of net ports = 8413.
+Average number of ports per net = 2.73
+Largest net SNPS_LOGIC0 has 33 ports.
+Average cells per port =  1.08
+Number of fully detailed routed nets = 1.
+[    End of Build Net] CPU =    0:00:00, gr_data VM =       10 M
+                   Elapsed =    0:00:00, total   VM =      104 M
+
+Average GCell capacity   1.71 on layer (0) M1
+Average GCell capacity  10.00 on layer (1) M2
+Average GCell capacity   5.38 on layer (2) M3
+Average GCell capacity   3.14 on layer (3) TOP_M
+Number of GCells = 10404.
+VR: Init Virtual Routing - Level 1
+
+VR: ignore voltage areas
+
+VR: Virtual Routing Completed
+
+[   End of Build Data] CPU =    0:00:00, gr_data VM =       12 M
+                   Elapsed =    0:00:00, total   VM =      107 M
+Number of nets to route = 3080.
+Begin Initial routing ...
+Layer M1: reserved tracks = 2
+Layer M2: reserved tracks = 2
+Layer M3: reserved tracks = 2
+Layer TOP_M: reserved tracks = 2
+Initial routing completed.
+Initial. Routing result:
+Initial. Both Dirs: Overflow = 1860 Max = 9 GRCs = 854 (16.42%)
+Initial. H routing: Overflow = 1840 Max = 9 (1 GRCs) GRCs = 837 (16.09%)
+Initial. V routing: Overflow = 20 Max = 2 (3 GRCs) GRCs = 17 (0.33%)
+Initial. M1       : Overflow = 519 Max = 6 (1 GRCs) GRCs = 371 (14.26%)
+Initial. M2       : Overflow = 20 Max = 2 (3 GRCs) GRCs = 17 (0.65%)
+Initial. M3       : Overflow = 1321 Max = 5 (2 GRCs) GRCs = 606 (23.30%)
+Initial. TOP_M    : Overflow = 0 Max = 0 GRCs = 0 (0.00%)
+
+Initial. Total wire length = 61114.55
+Initial. Layer M1 wire length = 5590.48
+Initial. Layer M2 wire length = 35942.05
+Initial. Layer M3 wire length = 19531.68
+Initial. Layer TOP_M wire length = 50.34
+Initial. Via V2_cross count = 9012
+Initial. Via V3_cross count = 4455
+Initial. Via VL count = 14
+[End of Initial Routing] CPU =    0:00:00, gr_data VM =       15 M
+                   Elapsed =    0:00:00, total   VM =      110 M
+Begin Rerouting ... 
+Meandering net count: 2/3080
+Begin Phase 1 ...
+Layer M1: reserved tracks = 1
+Layer M2: reserved tracks = 1
+Layer M3: reserved tracks = 1
+Layer TOP_M: reserved tracks = 1
+phase1. Routing result:
+phase1. Both Dirs: Overflow = 1582 Max = 6 GRCs = 762 (14.65%)
+phase1. H routing: Overflow = 1579 Max = 6 (3 GRCs) GRCs = 759 (14.59%)
+phase1. V routing: Overflow = 3 Max = 1 (3 GRCs) GRCs = 3 (0.06%)
+phase1. M1       : Overflow = 415 Max = 4 (4 GRCs) GRCs = 308 (11.84%)
+phase1. M2       : Overflow = 3 Max = 1 (3 GRCs) GRCs = 3 (0.12%)
+phase1. M3       : Overflow = 1164 Max = 5 (1 GRCs) GRCs = 577 (22.18%)
+phase1. TOP_M    : Overflow = 0 Max = 0 GRCs = 0 (0.00%)
+
+phase1. Total wire length = 67871.89
+phase1. Layer M1 wire length = 7512.40
+phase1. Layer M2 wire length = 42290.67
+phase1. Layer M3 wire length = 17906.56
+phase1. Layer TOP_M wire length = 162.26
+phase1. Via V2_cross count = 9189
+phase1. Via V3_cross count = 4317
+phase1. Via VL count = 42
+Phase 1 completed.
+[       End of Phase1] CPU =    0:00:00, gr_data VM =       15 M
+                   Elapsed =    0:00:00, total   VM =      110 M
+Meandering net count: 17/3080
+Begin Phase 2 ...
+Layer M1: reserved tracks = 0
+Layer M2: reserved tracks = 0
+Layer M3: reserved tracks = 0
+Layer TOP_M: reserved tracks = 0
+phase2. Routing result:
+phase2. Both Dirs: Overflow = 1370 Max = 5 GRCs = 718 (13.80%)
+phase2. H routing: Overflow = 1366 Max = 5 (4 GRCs) GRCs = 714 (13.73%)
+phase2. V routing: Overflow = 4 Max = 1 (4 GRCs) GRCs = 4 (0.08%)
+phase2. M1       : Overflow = 370 Max = 3 (4 GRCs) GRCs = 298 (11.46%)
+phase2. M2       : Overflow = 2 Max = 1 (2 GRCs) GRCs = 2 (0.08%)
+phase2. M3       : Overflow = 996 Max = 4 (4 GRCs) GRCs = 550 (21.15%)
+phase2. TOP_M    : Overflow = 2 Max = 1 (2 GRCs) GRCs = 2 (0.08%)
+
+phase2. Total wire length = 82945.90
+phase2. Layer M1 wire length = 8764.00
+phase2. Layer M2 wire length = 56265.20
+phase2. Layer M3 wire length = 17175.76
+phase2. Layer TOP_M wire length = 740.94
+phase2. Via V2_cross count = 9470
+phase2. Via V3_cross count = 4364
+phase2. Via VL count = 172
+Phase 2 completed.
+[       End of Phase2] CPU =    0:00:00, gr_data VM =       15 M
+                   Elapsed =    0:00:00, total   VM =      110 M
+Meandering net count: 31/3080
+Begin Phase 3 ...
+Layer M1: reserved tracks = 0
+Layer M2: reserved tracks = 0
+Layer M3: reserved tracks = 0
+Layer TOP_M: reserved tracks = 0
+phase3. Routing result:
+phase3. Both Dirs: Overflow = 1323 Max = 5 GRCs = 708 (13.61%)
+phase3. H routing: Overflow = 1318 Max = 5 (3 GRCs) GRCs = 703 (13.51%)
+phase3. V routing: Overflow = 5 Max = 1 (5 GRCs) GRCs = 5 (0.10%)
+phase3. M1       : Overflow = 339 Max = 2 (58 GRCs) GRCs = 281 (10.80%)
+phase3. M2       : Overflow = 3 Max = 1 (3 GRCs) GRCs = 3 (0.12%)
+phase3. M3       : Overflow = 979 Max = 4 (1 GRCs) GRCs = 549 (21.11%)
+phase3. TOP_M    : Overflow = 2 Max = 1 (2 GRCs) GRCs = 2 (0.08%)
+
+phase3. Total wire length = 85281.13
+phase3. Layer M1 wire length = 8854.72
+phase3. Layer M2 wire length = 58303.66
+phase3. Layer M3 wire length = 17213.84
+phase3. Layer TOP_M wire length = 908.91
+phase3. Via V2_cross count = 9488
+phase3. Via V3_cross count = 4424
+phase3. Via VL count = 219
+Phase 3 completed.
+[       End of Phase3] CPU =    0:00:00, gr_data VM =       15 M
+                   Elapsed =    0:00:00, total   VM =      110 M
+Meandering net count: 34/3080
+Begin Phase 4 ...
+Layer M1: reserved tracks = 0
+Layer M2: reserved tracks = 0
+Layer M3: reserved tracks = 0
+Layer TOP_M: reserved tracks = 0
+phase4. Routing result:
+phase4. Both Dirs: Overflow = 1309 Max = 5 GRCs = 707 (13.59%)
+phase4. H routing: Overflow = 1306 Max = 5 (2 GRCs) GRCs = 704 (13.53%)
+phase4. V routing: Overflow = 3 Max = 1 (3 GRCs) GRCs = 3 (0.06%)
+phase4. M1       : Overflow = 331 Max = 2 (55 GRCs) GRCs = 276 (10.61%)
+phase4. M2       : Overflow = 1 Max = 1 (1 GRCs) GRCs = 1 (0.04%)
+phase4. M3       : Overflow = 975 Max = 4 (1 GRCs) GRCs = 553 (21.26%)
+phase4. TOP_M    : Overflow = 2 Max = 1 (2 GRCs) GRCs = 2 (0.08%)
+
+phase4. Total wire length = 86042.52
+phase4. Layer M1 wire length = 8871.52
+phase4. Layer M2 wire length = 58902.09
+phase4. Layer M3 wire length = 17253.04
+phase4. Layer TOP_M wire length = 1015.87
+phase4. Via V2_cross count = 9488
+phase4. Via V3_cross count = 4451
+phase4. Via VL count = 243
+Phase 4 completed.
+[       End of Phase4] CPU =    0:00:00, gr_data VM =       15 M
+                   Elapsed =    0:00:00, total   VM =      110 M
+Meandering net count: 37/3080
+Begin Phase 5 ...
+Layer M1: reserved tracks = 0
+Layer M2: reserved tracks = 0
+Layer M3: reserved tracks = 0
+Layer TOP_M: reserved tracks = 0
+Extra wire cost M1 = 0
+Extra wire cost M2 = 0
+Extra wire cost M3 = 0
+Extra wire cost TOP_M = 0
+Extra via cost V2 = 0
+Extra via cost V3 = 0
+Extra via cost TOP_V = 0
+Layer M1: reserved tracks = 0
+Layer M2: reserved tracks = 0
+Layer M3: reserved tracks = 0
+Layer TOP_M: reserved tracks = 0
+phase5. Routing result:
+phase5. Both Dirs: Overflow = 1309 Max = 5 GRCs = 707 (13.59%)
+phase5. H routing: Overflow = 1306 Max = 5 (2 GRCs) GRCs = 704 (13.53%)
+phase5. V routing: Overflow = 3 Max = 1 (3 GRCs) GRCs = 3 (0.06%)
+phase5. M1       : Overflow = 331 Max = 2 (55 GRCs) GRCs = 276 (10.61%)
+phase5. M2       : Overflow = 1 Max = 1 (1 GRCs) GRCs = 1 (0.04%)
+phase5. M3       : Overflow = 975 Max = 4 (1 GRCs) GRCs = 553 (21.26%)
+phase5. TOP_M    : Overflow = 2 Max = 1 (2 GRCs) GRCs = 2 (0.08%)
+
+phase5. Total wire length = 86042.52
+phase5. Layer M1 wire length = 8877.12
+phase5. Layer M2 wire length = 58902.09
+phase5. Layer M3 wire length = 17247.44
+phase5. Layer TOP_M wire length = 1015.87
+phase5. Via V2_cross count = 9490
+phase5. Via V3_cross count = 4449
+phase5. Via VL count = 243
+Phase 5 completed.
+[       End of Phase5] CPU =    0:00:00, gr_data VM =       15 M
+                   Elapsed =    0:00:00, total   VM =      110 M
+Meandering net count: 37/3080
+Rerouting completed.
+[    End of ReRouting] CPU =    0:00:00, gr_data VM =       15 M
+                   Elapsed =    0:00:00, total   VM =      110 M
+Writing results to database ...
+
+Deleting previous global routing.
+[    End of Update DB] CPU =    0:00:00, gr_data VM =        7 M
+                   Elapsed =    0:00:01, total   VM =      110 M
+[  End of Global Routing] CPU =    0:00:00, gr_data VM =        7 M
+                   Elapsed =    0:00:01, total   VM =      110 M
+Global routing completed.
+Information: RC extraction has been freed. (PSYN-503)
+Start Track Assignment
+Error: It is not recommended to use classic router commands after Zroute commands. (RT-302)
+********* router params **********
+** Layer Extra Cost:
+  layerExtraCostByRC : 0
+  (polyCont,via1, .. ,via14)ExtraCost :  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+  (poly,m1, .. ,m15)ExtraCost :  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+********* router params **********
+Using [2 x 2] Fat Wire Table for M1
+
+Using [2 x 2] Fat Wire Table for M2
+
+Using [2 x 2] Fat Wire Table for M3
+
+Using [2 x 2] Fat Wire Table for TOP_M
+
+
+ Add [VL] 's rotated via as default via on Lay TOP_V 
+
+ Add [V3_cross] 's rotated via as default via on Lay V3 
+
+ Add [V2_cross] 's rotated via as default via on Lay V2 
+Select via(VL) as the default for layer(TOP_V)
+
+	Alternate via(VL-R) for layer(TOP_V)
+Select via(V3_cross) as the default for layer(V3)
+
+	Alternate via(V3_cross-R) for layer(V3)
+	Alternate via(V3-R) for layer(V3)
+	Alternate via(V3) for layer(V3)
+Select via(V2_cross) as the default for layer(V2)
+
+	Alternate via(V2_cross-R) for layer(V2)
+	Alternate via(V2-R) for layer(V2)
+	Alternate via(V2) for layer(V2)
+Reading spacing rules from lib properties (create_lib_property)
+
+Reading wire end grids from technolgy file
+
+Reading jog to jog spacing from technology file
+POWER Net (VDD)
+GROUND Net (VSS)
+Warning: Cell contains tie connections which are not connected to real PG. (MW-349)
+release 4 cache blocks
+There are NO POLY pins
+# Masters = 52 , # Instances = 3028 , # Nets = 3083
+
+# Routing Layers = 4 , Maximum Pitch = 1120 [X:1120, Y:660]m(1120,660)
+Max. FatWireThreshold = 10600
+  wire Layer[0] = M1 (H,1,1)
+  cut  Layer[1] = V2
+  wire Layer[1] = M2 (V,1,0)
+  cut  Layer[2] = V3
+  wire Layer[2] = M3 (H,1,0)
+  cut  Layer[3] = TOP_V
+  wire Layer[3] = TOP_M (V,1,0)
+GRC-Dim: (5600,5600)
+[VL] and [V3_cross] stacking is allowed
+
+[V3_cross] and [V2_cross] stacking is allowed
+
+Layer (M1) pitch (0.560) : wire-via(0.485) via-via(0.510)
+Layer (TOP_M) pitch (1.120) : wire-via(0.950) via-via(1.000)
+Start reading global routing
+Elapsed =    0:00:00, CPU =    0:00:00
+runTiming = 0 
+runXtalk = 0 
+GaTimingFileMode = 0 
+tryGlobalLayerOnly = 0 
+densityDriven = 0 
+
+Start initial assignment
+Assign cols
+Elapsed =    0:00:00, CPU =    0:00:00
+Assign rows
+Elapsed =    0:00:00, CPU =    0:00:00
+number of overlapped wires after initial assignment = 5488 of the total 16670 wires
+
+
+Start reroute with jog insertion
+number of overlapped wires AFTER rerouting = 3247 of the total 17112 wires
+
+Elapsed =    0:00:00, CPU =    0:00:00
+
+Number of M1 wires: 1646
+Number of M2 wires: 11219
+Number of M3 wires: 3853
+Number of TOP_M wires: 394
+Total number of wires in chip: 17112
+
+Total M1 wire length: 12612.0
+Total M2 wire length: 62228.5
+Total M3 wire length: 16218.3
+Total TOP_M wire length: 1684.4
+Total wire length in chip: 92743.2
+  (Including total preWire length: 833.72)
+
+Longest M1 wire length: 183.1
+Longest M2 wire length: 235.5
+Longest M3 wire length: 108.6
+Longest TOP_M wire length: 16.5
+
+ZCA Cleanup Wire Time:
+Elapsed =    0:00:00, CPU =    0:00:00
+
+ZCA Purge GRoute Time:
+Elapsed =    0:00:00, CPU =    0:00:00
+
+ZCA Wire/Via Output Time:
+Elapsed =    0:00:00, CPU =    0:00:00
+
+Peak memory size in Track Assignment is 111 Mbytes
+
+ZCA Runtime
+        Total = 0
+        Packing = 0
+        RouteLocal = 0
+        RouteUnAssigned = 0
+        ReRoute = 0
+        Optimization = 0
+ZCA Memory usage
+        size(Track) = 96        numTrack = 0
+        size(Wire) = 112        numWire = 0
+        size(PreWire) = 16      numPreWire = 13
+        size(BlkgPin) = 48      numBlkgPin = 16384
+        size(WideBlkg) = 72     numWideBlkg = 20
+        size(WireLink) = 16     numWireLink = 0
+        size(EdgeWires) = 32    numEdgeWires = 0
+        size(PinGrid) = 16      numPinGrid = 0
+        size(PinLink) = 80      numPinLink = 0
+        size(TargetLink) = 16   numTargetLink = 0
+        size(ViaLink) = 48      numViaLink = 0
+Information: RC extraction has been freed. (PSYN-503)
+Error: It is not recommended to use classic router commands after Zroute commands. (RT-302)
+********* router params **********
+** Layer Extra Cost:
+  layerExtraCostByRC : 0
+  (polyCont,via1, .. ,via14)ExtraCost :  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+  (poly,m1, .. ,m15)ExtraCost :  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+** Design Rule
+  diagonalDRC : 1
+  diagonalMinWidth : 1
+  ignoreNotchDRC : 1
+  ignoreFrozenNetDRC : 0
+  fillNotch : 1
+  blockageAsFatWire : 1
+  stdCellBlockageAsThin : 0
+  wideMacroPinAsFatWire : 0
+  checkMergedFatWire : 2
+  checkTopPinMinArea : 1
+  checkCellPinMinArea : 0
+  minAreaMode2WaivingMode : 0
+  hardMinLayerConx : 0
+  viaOverMaxLayer : 1
+  hardMaxLayerConx : 2
+  wrongWayNoVia : 0
+  rotateLineViaArray : -1
+  lineViaFollowPrefDir : 0
+  noOffsetFatVia : 0
+** Routing Rule/Cost
+  accessPolyPin : 1
+  polyWireCost : 0
+  m1WireCost : 1
+  m2WireCost : 1
+  offGridCost : 1
+  wrongWayExtraCost : 0
+  limitPolyLength : 0
+  limitM1Length : 0
+  limitM2Length : 0
+  limitM3Length : 0
+  limitM4Length : 0
+  ignoreViaRegion : 0
+  timingSpace : 0
+  lessMinAreaStackCost : 0
+  defaultWidthForStub : 0
+  layerLengthLimit : -1
+  ignoreTopBndy : 0
+  macroPinCenterConn : 0
+  portSingleConn : 0
+  dontShortDiffEEQ : 0
+  doProbeConx : 0
+  adjustLineViaArray : 0
+  noOffGridRouting : 0
+  shiftVarWidthWire : 0
+  avoidWireOverlap : 0
+  dontMakePinFat : 0
+  dontRotateVia : 0
+  maxTieOffDistance : 10
+  readMetalBlockageLayer : 0
+** Charge-Collecting Antenna
+  doAntennaConx : 0
+** Routing Flow
+  rerunDRC : 0
+  resetWidth : 0
+  checkVarWidth : 1
+  timeLimit : -1
+  autoSaveInterval : 120
+  reportLimit : 200
+  resetMinMaxLayer : 0
+  connBrokenNet : 1
+  connTieOff : 1
+  useDanglingWire : 0
+  rerouteUserWire : 0
+  trimUserAntenna : 0
+  lowSkewClkRoute : 1
+** VarRouteRule/Tapering
+  feedThruPinTaper : 0
+  wideWireToInputPin : 0
+  wideWireToOutputPin : 0
+  wideWireToMacroPin : 0
+  wideWireToPadPin : -1
+  wideWireToTopPin : -1
+  wideWireWidthAsMin : 0
+  ignoreVarSpacingToPG : 0
+  varSpacingToSameNet : 0
+  fatSpacingToSameNet : 1
+  alwaysExtendWideWire : 0
+  pinTaperMode : 1
+  pinTaperLengthLimit : 10
+** Special Mode
+  maxOffGridTrack : 0
+  fixMinEdgeLengthByFilling : 0
+  ultraWideWireMode : 0
+********* router params **********
+Using [2 x 2] Fat Wire Table for M1
+
+Using [2 x 2] Fat Wire Table for M2
+
+Using [2 x 2] Fat Wire Table for M3
+
+Using [2 x 2] Fat Wire Table for TOP_M
+
+
+ Add [VL] 's rotated via as default via on Lay TOP_V 
+
+ Add [V3_cross] 's rotated via as default via on Lay V3 
+
+ Add [V2_cross] 's rotated via as default via on Lay V2 
+Select via(VL) as the default for layer(TOP_V)
+
+	Alternate via(VL-R) for layer(TOP_V)
+Select via(V3_cross) as the default for layer(V3)
+
+	Alternate via(V3_cross-R) for layer(V3)
+	Alternate via(V3-R) for layer(V3)
+	Alternate via(V3) for layer(V3)
+Select via(V2_cross) as the default for layer(V2)
+
+	Alternate via(V2_cross-R) for layer(V2)
+	Alternate via(V2-R) for layer(V2)
+	Alternate via(V2) for layer(V2)
+Reading spacing rules from lib properties (create_lib_property)
+
+Reading wire end grids from technolgy file
+
+Reading jog to jog spacing from technology file
+POWER Net (VDD)
+GROUND Net (VSS)
+Warning: Cell contains tie connections which are not connected to real PG. (MW-349)
+release 3 cache blocks
+There are NO POLY pins
+# Masters = 52 , # Instances = 3028 , # Nets = 3083
+
+# Routing Layers = 4 , Maximum Pitch = 1120 [X:1120, Y:660]m(1120,660)
+Max. FatWireThreshold = 10600
+  wire Layer[0] = M1 (H,1,1)
+  cut  Layer[1] = V2
+  wire Layer[1] = M2 (V,1,0)
+  cut  Layer[2] = V3
+  wire Layer[2] = M3 (H,1,0)
+  cut  Layer[3] = TOP_V
+  wire Layer[3] = TOP_M (V,1,0)
+GRC-Dim: (5600,5600)
+[VL] and [V3_cross] stacking is allowed
+
+[V3_cross] and [V2_cross] stacking is allowed
+
+Layer (M1) pitch (0.560) : wire-via(0.485) via-via(0.510)
+Layer (TOP_M) pitch (1.120) : wire-via(0.950) via-via(1.000)
+
+******** Pin Access Analysis *******
+** # Cell Masters    =   51
+** # Ports (logical) =  161
+** # Pins (physical) =  161
+** # Pins with no good access point on Grid (V&H) =   0 ( 0%)
+Checking cell instance tracks on layer (M1)
+Checking cell instance tracks on layer (M2)
+There are no open nets!
+
+Route SBox (1 of 91) [-1,-1..27,49]
+OffGrid X = 9/80, Y = 20/175
+	Initial Violations =   86 (0)
+	Final   Violations =   15 (0)
+	******* Total Violations =      17 (0)
+  Routed        1/91 SBoxes, Violations =         17 
+
+Route SBox (2 of 91) [-1,43..27,94]
+OffGrid X = 33/101, Y = 80/232
+	Initial Violations =  241 (0)
+	Final   Violations =   13 (0)
+	******* Total Violations =      27 (0)
+  Routed        2/91 SBoxes, Violations =         27 
+
+Route SBox (3 of 91) [-1,88..27,138]
+OffGrid X = 28/98, Y = 65/220
+	Initial Violations =  155 (0)
+	Final   Violations =   18 (0)
+	******* Total Violations =      43 (0)
+  Routed        3/91 SBoxes, Violations =         43 
+
+Route SBox (4 of 91) [-1,133..27,183]
+OffGrid X = 27/97, Y = 69/222
+	Initial Violations =  255 (0)
+	Final   Violations =   23 (0)
+	******* Total Violations =      62 (0)
+  Routed        4/91 SBoxes, Violations =         62 
+
+Route SBox (5 of 91) [-1,178..27,228]
+OffGrid X = 27/97, Y = 74/226
+	Initial Violations =  247 (0)
+	Final   Violations =   20 (0)
+	******* Total Violations =      80 (0)
+  Routed        5/91 SBoxes, Violations =         80 
+
+Route SBox (6 of 91) [-1,222..27,273]
+OffGrid X = 26/94, Y = 73/226
+	Initial Violations =  155 (0)
+	Final   Violations =    5 (0)
+	******* Total Violations =      85 (0)
+  Routed        6/91 SBoxes, Violations =         85 
+
+Route SBox (7 of 91) [-1,267..27,301]
+	******* Total Violations =      84 (0)
+  Routed        7/91 SBoxes, Violations =         84 
+
+Route SBox (8 of 91) [20,-1..49,49]
+OffGrid X = 13/89, Y = 30/185
+	Initial Violations =   90 (0)
+	Final   Violations =   11 (0)
+	******* Total Violations =      79 (0)
+  Routed        8/91 SBoxes, Violations =         79 
+
+Route SBox (9 of 91) [20,43..49,94]
+OffGrid X = 52/122, Y = 118/266
+	Initial Violations =  411 (0)
+	Final   Violations =   43 (0)
+	******* Total Violations =     109 (0)
+  Routed        9/91 SBoxes, Violations =        109 
+
+Route SBox (10 of 91) [20,88..49,138]
+OffGrid X = 67/135, Y = 139/285
+	Initial Violations =  497 (0)
+	Final   Violations =   10 (0)
+	******* Total Violations =      94 (0)
+  Routed       10/91 SBoxes, Violations =         94 
+
+Route SBox (11 of 91) [20,133..49,183]
+OffGrid X = 44/117, Y = 98/244
+	Initial Violations =  335 (0)
+	Final   Violations =   27 (0)
+	******* Total Violations =     100 (0)
+  Routed       11/91 SBoxes, Violations =        100 
+
+Route SBox (12 of 91) [20,178..49,228]
+OffGrid X = 43/116, Y = 114/258
+	Initial Violations =  444 (0)
+	Final   Violations =   54 (0)
+	******* Total Violations =     128 (0)
+  Routed       12/91 SBoxes, Violations =        128 
+
+Route SBox (13 of 91) [20,222..49,273]
+OffGrid X = 36/109, Y = 98/250
+	Initial Violations =  298 (0)
+	Final   Violations =   30 (0)
+	******* Total Violations =     137 (0)
+  Routed       13/91 SBoxes, Violations =        137 
+
+Route SBox (14 of 91) [20,267..49,301]
+OffGrid X = 7/84, Y = 9/59
+	Initial Violations =   12 (0)
+	Final   Violations =    4 (0)
+	******* Total Violations =     127 (0)
+  Routed       14/91 SBoxes, Violations =        127 
+
+Route SBox (15 of 91) [43,-1..71,49]
+OffGrid X = 13/89, Y = 48/201
+	Initial Violations =   72 (0)
+	Final   Violations =    3 (0)
+	******* Total Violations =     128 (0)
+  Routed       15/91 SBoxes, Violations =        128 
+
+Route SBox (16 of 91) [43,43..71,94]
+OffGrid X = 45/115, Y = 109/257
+	Initial Violations =  438 (0)
+	Final   Violations =   53 (0)
+	******* Total Violations =     149 (0)
+  Routed       16/91 SBoxes, Violations =        149 
+
+Route SBox (17 of 91) [43,88..71,138]
+OffGrid X = 50/119, Y = 141/288
+	Initial Violations =  388 (0)
+	Final   Violations =   45 (0)
+	******* Total Violations =     172 (0)
+  Routed       17/91 SBoxes, Violations =        172 
+
+Route SBox (18 of 91) [43,133..71,183]
+OffGrid X = 41/115, Y = 127/269
+	Initial Violations =  384 (0)
+	Final   Violations =   43 (0)
+	******* Total Violations =     184 (0)
+  Routed       18/91 SBoxes, Violations =        184 
+
+Route SBox (19 of 91) [43,178..71,228]
+OffGrid X = 42/113, Y = 113/256
+	Initial Violations =  431 (0)
+	Final   Violations =   54 (0)
+	******* Total Violations =     197 (0)
+  Routed       19/91 SBoxes, Violations =        197 
+
+Route SBox (20 of 91) [43,222..71,273]
+OffGrid X = 37/107, Y = 112/255
+	Initial Violations =  375 (0)
+	Final   Violations =   82 (0)
+	******* Total Violations =     250 (0)
+  Routed       20/91 SBoxes, Violations =        250 
+
+Route SBox (21 of 91) [43,267..71,301]
+OffGrid X = 15/89, Y = 19/66
+	Initial Violations =   47 (0)
+	Final   Violations =   18 (0)
+	******* Total Violations =     231 (0)
+  Routed       21/91 SBoxes, Violations =        231 
+
+Route SBox (22 of 91) [65,-1..94,49]
+OffGrid X = 11/87, Y = 39/193
+	Initial Violations =  148 (0)
+	Final   Violations =   23 (0)
+	******* Total Violations =     250 (0)
+  Routed       22/91 SBoxes, Violations =        250 
+
+Route SBox (23 of 91) [65,43..94,94]
+OffGrid X = 47/118, Y = 119/266
+	Initial Violations =  375 (0)
+	Final   Violations =   61 (0)
+	******* Total Violations =     265 (0)
+  Routed       23/91 SBoxes, Violations =        265 
+
+Route SBox (24 of 91) [65,88..94,138]
+OffGrid X = 51/119, Y = 118/267
+	Initial Violations =  522 (0)
+	Final   Violations =   56 (0)
+	******* Total Violations =     270 (0)
+  Routed       24/91 SBoxes, Violations =        270 
+
+Route SBox (25 of 91) [65,133..94,183]
+OffGrid X = 39/111, Y = 104/252
+	Initial Violations =  346 (0)
+	Final   Violations =   81 (0)
+	******* Total Violations =     301 (0)
+  Routed       25/91 SBoxes, Violations =        301 
+
+Route SBox (26 of 91) [65,178..94,228]
+OffGrid X = 35/103, Y = 104/252
+	Initial Violations =  393 (0)
+	Final   Violations =   70 (0)
+	******* Total Violations =     331 (0)
+  Routed       26/91 SBoxes, Violations =        331 
+
+Route SBox (27 of 91) [65,222..94,273]
+OffGrid X = 35/108, Y = 102/247
+	Initial Violations =  308 (0)
+	Final   Violations =   43 (0)
+	******* Total Violations =     333 (0)
+  Routed       27/91 SBoxes, Violations =        333 
+
+Route SBox (28 of 91) [65,267..94,301]
+OffGrid X = 12/86, Y = 24/70
+	Initial Violations =   22 (0)
+	Final   Violations =   11 (0)
+	******* Total Violations =     333 (0)
+  Routed       28/91 SBoxes, Violations =        333 
+
+Route SBox (29 of 91) [88,-1..116,49]
+OffGrid X = 6/83, Y = 25/183
+	Initial Violations =   69 (0)
+	Final   Violations =   10 (0)
+	******* Total Violations =     326 (0)
+  Routed       29/91 SBoxes, Violations =        326 
+
+Route SBox (30 of 91) [88,43..116,94]
+OffGrid X = 33/107, Y = 95/249
+	Initial Violations =  274 (0)
+	Final   Violations =   40 (0)
+	******* Total Violations =     321 (0)
+  Routed       30/91 SBoxes, Violations =        321 
+
+Route SBox (31 of 91) [88,88..116,138]
+OffGrid X = 51/122, Y = 132/279
+	Initial Violations =  403 (0)
+	Final   Violations =   28 (0)
+	******* Total Violations =     279 (0)
+  Routed       31/91 SBoxes, Violations =        279 
+
+Route SBox (32 of 91) [88,133..116,183]
+OffGrid X = 51/118, Y = 121/263
+	Initial Violations =  468 (0)
+	Final   Violations =  161 (0)
+	******* Total Violations =     387 (0)
+  Routed       32/91 SBoxes, Violations =        387 
+
+Route SBox (33 of 91) [88,178..116,228]
+OffGrid X = 37/108, Y = 115/257
+	Initial Violations =  448 (0)
+	Final   Violations =  107 (0)
+	******* Total Violations =     363 (0)
+  Routed       33/91 SBoxes, Violations =        363 
+
+Route SBox (34 of 91) [88,222..116,273]
+OffGrid X = 18/93, Y = 43/201
+	Initial Violations =  104 (0)
+	Final   Violations =   29 (0)
+	******* Total Violations =     345 (0)
+  Routed       34/91 SBoxes, Violations =        345 
+
+Route SBox (35 of 91) [88,267..116,301]
+OffGrid X = 4/80, Y = 8/57
+	Initial Violations =    4 (0)
+	Final   Violations =    1 (0)
+	******* Total Violations =     342 (0)
+  Routed       35/91 SBoxes, Violations =        342 
+
+Route SBox (36 of 91) [110,-1..139,49]
+OffGrid X = 3/80, Y = 8/167
+	Initial Violations =   54 (0)
+	Final   Violations =    3 (0)
+	******* Total Violations =     335 (0)
+  Routed       36/91 SBoxes, Violations =        335 
+
+Route SBox (37 of 91) [110,43..139,94]
+OffGrid X = 21/96, Y = 35/196
+	Initial Violations =  125 (0)
+	Final   Violations =    3 (0)
+	******* Total Violations =     308 (0)
+  Routed       37/91 SBoxes, Violations =        308 
+
+Route SBox (38 of 91) [110,88..139,138]
+OffGrid X = 40/111, Y = 105/253
+	Initial Violations =  213 (0)
+	Final   Violations =   16 (0)
+	******* Total Violations =     290 (0)
+  Routed       38/91 SBoxes, Violations =        290 
+
+Route SBox (39 of 91) [110,133..139,183]
+OffGrid X = 50/121, Y = 119/265
+	Initial Violations =  473 (0)
+	Final   Violations =   23 (0)
+	******* Total Violations =     219 (0)
+  Routed       39/91 SBoxes, Violations =        219 
+
+Route SBox (40 of 91) [110,178..139,228]
+OffGrid X = 36/112, Y = 94/242
+	Initial Violations =  304 (0)
+	Final   Violations =   11 (0)
+	******* Total Violations =     115 (0)
+  Routed       40/91 SBoxes, Violations =        115 
+
+Route SBox (41 of 91) [110,222..139,273]
+OffGrid X = 8/84, Y = 17/179
+	Initial Violations =   84 (0)
+	Final   Violations =   17 (0)
+	******* Total Violations =     120 (0)
+  Routed       41/91 SBoxes, Violations =        120 
+
+Route SBox (42 of 91) [110,267..139,301]
+OffGrid X = 3/80, Y = 5/55
+	Initial Violations =    7 (0)
+	Final   Violations =    4 (0)
+	******* Total Violations =     123 (0)
+  Routed       42/91 SBoxes, Violations =        123 
+
+Route SBox (43 of 91) [132,-1..161,49]
+OffGrid X = 3/80, Y = 7/166
+	Initial Violations =   25 (0)
+	Final   Violations =    5 (0)
+	******* Total Violations =     125 (0)
+  Routed       43/91 SBoxes, Violations =        125 
+
+Route SBox (44 of 91) [132,43..161,94]
+OffGrid X = 12/88, Y = 28/189
+	Initial Violations =   90 (0)
+	Final   Violations =   11 (0)
+	******* Total Violations =     132 (0)
+  Routed       44/91 SBoxes, Violations =        132 
+
+Route SBox (45 of 91) [132,88..161,138]
+OffGrid X = 39/111, Y = 93/243
+	Initial Violations =  219 (0)
+	Final   Violations =   28 (0)
+	******* Total Violations =     149 (0)
+  Routed       45/91 SBoxes, Violations =        149 
+
+Route SBox (46 of 91) [132,133..161,183]
+OffGrid X = 49/121, Y = 103/249
+	Initial Violations =  314 (0)
+	Final   Violations =   37 (0)
+	******* Total Violations =     158 (0)
+  Routed       46/91 SBoxes, Violations =        158 
+
+Route SBox (47 of 91) [132,178..161,228]
+OffGrid X = 44/117, Y = 98/246
+	Initial Violations =  222 (0)
+	Final   Violations =   68 (0)
+	******* Total Violations =     223 (0)
+  Routed       47/91 SBoxes, Violations =        223 
+
+Route SBox (48 of 91) [132,222..161,273]
+OffGrid X = 6/82, Y = 11/175
+	Initial Violations =   40 (0)
+	Final   Violations =    3 (0)
+	******* Total Violations =     199 (0)
+  Routed       48/91 SBoxes, Violations =        199 
+
+Route SBox (49 of 91) [132,267..161,301]
+OffGrid X = 3/80, Y = 5/55
+	Initial Violations =    9 (0)
+	Final   Violations =    0 (0)
+	******* Total Violations =     199 (0)
+  Routed       49/91 SBoxes, Violations =        199 
+
+Route SBox (50 of 91) [155,-1..183,49]
+OffGrid X = 3/80, Y = 12/170
+	Initial Violations =   42 (0)
+	Final   Violations =   11 (0)
+	******* Total Violations =     209 (0)
+  Routed       50/91 SBoxes, Violations =        209 
+
+Route SBox (51 of 91) [155,43..183,94]
+OffGrid X = 6/83, Y = 13/177
+	Initial Violations =   55 (0)
+	Final   Violations =    7 (0)
+	******* Total Violations =     210 (0)
+  Routed       51/91 SBoxes, Violations =        210 
+
+Route SBox (52 of 91) [155,88..183,138]
+OffGrid X = 30/102, Y = 77/230
+	Initial Violations =  157 (0)
+	Final   Violations =    9 (0)
+	******* Total Violations =     185 (0)
+  Routed       52/91 SBoxes, Violations =        185 
+
+Route SBox (53 of 91) [155,133..183,183]
+OffGrid X = 46/114, Y = 128/268
+	Initial Violations =  334 (0)
+	Final   Violations =   34 (0)
+	******* Total Violations =     195 (0)
+  Routed       53/91 SBoxes, Violations =        195 
+
+Route SBox (54 of 91) [155,178..183,228]
+OffGrid X = 30/104, Y = 66/221
+	Initial Violations =  369 (0)
+	Final   Violations =   23 (0)
+	******* Total Violations =     143 (0)
+  Routed       54/91 SBoxes, Violations =        143 
+
+Route SBox (55 of 91) [155,222..183,273]
+OffGrid X = 6/83, Y = 8/172
+	Initial Violations =   58 (0)
+	Final   Violations =   25 (0)
+	******* Total Violations =     158 (0)
+  Routed       55/91 SBoxes, Violations =        158 
+
+Route SBox (56 of 91) [155,267..183,301]
+OffGrid X = 4/81, Y = 7/57
+	Initial Violations =    3 (0)
+	Final   Violations =    0 (0)
+	******* Total Violations =     158 (0)
+  Routed       56/91 SBoxes, Violations =        158 
+
+Route SBox (57 of 91) [177,-1..206,49]
+OffGrid X = 9/84, Y = 38/192
+	Initial Violations =   77 (0)
+	Final   Violations =   17 (0)
+	******* Total Violations =     163 (0)
+  Routed       57/91 SBoxes, Violations =        163 
+
+Route SBox (58 of 91) [177,43..206,94]
+OffGrid X = 24/98, Y = 67/225
+	Initial Violations =  248 (0)
+	Final   Violations =   48 (0)
+	******* Total Violations =     206 (0)
+  Routed       58/91 SBoxes, Violations =        206 
+
+Route SBox (59 of 91) [177,88..206,138]
+OffGrid X = 41/112, Y = 123/273
+	Initial Violations =  412 (0)
+	Final   Violations =   16 (0)
+	******* Total Violations =     195 (0)
+  Routed       59/91 SBoxes, Violations =        195 
+
+Route SBox (60 of 91) [177,133..206,183]
+OffGrid X = 38/110, Y = 92/238
+	Initial Violations =  465 (0)
+	Final   Violations =   26 (0)
+	******* Total Violations =     207 (0)
+  Routed       60/91 SBoxes, Violations =        207 
+
+Route SBox (61 of 91) [177,178..206,228]
+OffGrid X = 34/107, Y = 86/234
+	Initial Violations =  256 (0)
+	Final   Violations =    6 (0)
+	******* Total Violations =     196 (0)
+  Routed       61/91 SBoxes, Violations =        196 
+
+Route SBox (62 of 91) [177,222..206,273]
+OffGrid X = 13/89, Y = 32/192
+	Initial Violations =  186 (0)
+	Final   Violations =   15 (0)
+	******* Total Violations =     182 (0)
+  Routed       62/91 SBoxes, Violations =        182 
+
+Route SBox (63 of 91) [177,267..206,301]
+OffGrid X = 1/78, Y = 5/55
+	Initial Violations =    6 (0)
+	Final   Violations =    0 (0)
+	******* Total Violations =     178 (0)
+  Routed       63/91 SBoxes, Violations =        178 
+
+Route SBox (64 of 91) [200,-1..228,49]
+OffGrid X = 4/81, Y = 21/178
+	Initial Violations =   79 (0)
+	Final   Violations =   26 (0)
+	******* Total Violations =     190 (0)
+  Routed       64/91 SBoxes, Violations =        190 
+
+Route SBox (65 of 91) [200,43..228,94]
+OffGrid X = 33/105, Y = 87/241
+	Initial Violations =  240 (0)
+	Final   Violations =   52 (0)
+	******* Total Violations =     191 (0)
+  Routed       65/91 SBoxes, Violations =        191 
+
+Route SBox (66 of 91) [200,88..228,138]
+OffGrid X = 49/123, Y = 134/282
+	Initial Violations =  270 (0)
+	Final   Violations =   20 (0)
+	******* Total Violations =     187 (0)
+  Routed       66/91 SBoxes, Violations =        187 
+
+Route SBox (67 of 91) [200,133..228,183]
+OffGrid X = 40/111, Y = 108/254
+	Initial Violations =  241 (0)
+	Final   Violations =   13 (0)
+	******* Total Violations =     188 (0)
+  Routed       67/91 SBoxes, Violations =        188 
+
+Route SBox (68 of 91) [200,178..228,228]
+OffGrid X = 52/120, Y = 141/285
+	Initial Violations =  264 (0)
+	Final   Violations =   21 (0)
+	******* Total Violations =     201 (0)
+  Routed       68/91 SBoxes, Violations =        201 
+
+Route SBox (69 of 91) [200,222..228,273]
+OffGrid X = 19/94, Y = 62/216
+	Initial Violations =  145 (0)
+	Final   Violations =    7 (0)
+	******* Total Violations =     187 (0)
+  Routed       69/91 SBoxes, Violations =        187 
+
+Route SBox (70 of 91) [200,267..228,301]
+OffGrid X = 4/81, Y = 5/55
+	Initial Violations =   12 (0)
+	Final   Violations =    6 (0)
+	******* Total Violations =     188 (0)
+  Routed       70/91 SBoxes, Violations =        188 
+
+Route SBox (71 of 91) [222,-1..251,49]
+OffGrid X = 5/81, Y = 18/176
+	Initial Violations =   55 (0)
+	Final   Violations =    2 (0)
+	******* Total Violations =     188 (0)
+  Routed       71/91 SBoxes, Violations =        188 
+
+Route SBox (72 of 91) [222,43..251,94]
+OffGrid X = 12/89, Y = 36/198
+	Initial Violations =  179 (0)
+	Final   Violations =   25 (0)
+	******* Total Violations =     175 (0)
+  Routed       72/91 SBoxes, Violations =        175 
+
+Route SBox (73 of 91) [222,88..251,138]
+OffGrid X = 33/106, Y = 99/253
+	Initial Violations =  343 (0)
+	Final   Violations =   61 (0)
+	******* Total Violations =     204 (0)
+  Routed       73/91 SBoxes, Violations =        204 
+
+Route SBox (74 of 91) [222,133..251,183]
+OffGrid X = 54/124, Y = 137/281
+	Initial Violations =  294 (0)
+	Final   Violations =   27 (0)
+	******* Total Violations =     220 (0)
+  Routed       74/91 SBoxes, Violations =        220 
+
+Route SBox (75 of 91) [222,178..251,228]
+OffGrid X = 29/103, Y = 61/215
+	Initial Violations =  173 (0)
+	Final   Violations =   11 (0)
+	******* Total Violations =     207 (0)
+  Routed       75/91 SBoxes, Violations =        207 
+
+Route SBox (76 of 91) [222,222..251,273]
+OffGrid X = 15/90, Y = 47/204
+	Initial Violations =  115 (0)
+	Final   Violations =   27 (0)
+	******* Total Violations =     227 (0) (recheck = 1)
+  Routed       76/91 SBoxes, Violations =        227 
+
+Route SBox (77 of 91) [222,267..251,301]
+OffGrid X = 4/81, Y = 5/55
+	Initial Violations =   18 (0)
+	Final   Violations =    8 (0)
+	******* Total Violations =     227 (0)
+  Routed       77/91 SBoxes, Violations =        227 
+
+Route SBox (78 of 91) [244,-1..273,49]
+OffGrid X = 14/89, Y = 47/199
+	Initial Violations =   92 (0)
+	Final   Violations =   29 (0)
+	******* Total Violations =     252 (0)
+  Routed       78/91 SBoxes, Violations =        252 
+
+Route SBox (79 of 91) [244,43..273,94]
+OffGrid X = 31/104, Y = 92/244
+	Initial Violations =  245 (0)
+	Final   Violations =   24 (0)
+	******* Total Violations =     258 (0)
+  Routed       79/91 SBoxes, Violations =        258 
+
+Route SBox (80 of 91) [244,88..273,138]
+OffGrid X = 48/119, Y = 120/270
+	Initial Violations =  412 (0)
+	Final   Violations =   24 (0)
+	******* Total Violations =     219 (0) (recheck = 2)
+  Routed       80/91 SBoxes, Violations =        219 
+
+Route SBox (81 of 91) [244,133..273,183]
+OffGrid X = 53/122, Y = 128/272
+	Initial Violations =  267 (0)
+	Final   Violations =   26 (0)
+	******* Total Violations =     238 (0)
+  Routed       81/91 SBoxes, Violations =        238 
+
+Route SBox (82 of 91) [244,178..273,228]
+OffGrid X = 32/105, Y = 76/226
+	Initial Violations =  178 (0)
+	Final   Violations =   21 (0)
+	******* Total Violations =     249 (0)
+  Routed       82/91 SBoxes, Violations =        249 
+
+Route SBox (83 of 91) [244,222..273,273]
+OffGrid X = 26/99, Y = 60/216
+	Initial Violations =  188 (0)
+	Final   Violations =   23 (0)
+	******* Total Violations =     252 (0) (recheck = 3)
+  Routed       83/91 SBoxes, Violations =        252 
+
+Route SBox (84 of 91) [244,267..273,301]
+OffGrid X = 7/84, Y = 5/55
+	Initial Violations =   15 (0)
+	Final   Violations =   13 (0)
+	******* Total Violations =     260 (0)
+  Routed       84/91 SBoxes, Violations =        260 
+
+Route SBox (85 of 91) [267,-1..295,49]
+OffGrid X = 13/60, Y = 29/185
+	Initial Violations =   25 (0)
+	Final   Violations =    0 (0)
+	******* Total Violations =     245 (0)
+  Routed       85/91 SBoxes, Violations =        245 
+
+Route SBox (86 of 91) [267,43..295,94]
+OffGrid X = 18/65, Y = 66/221
+	Initial Violations =   32 (0)
+	Final   Violations =    2 (0)
+	******* Total Violations =     239 (0)
+  Routed       86/91 SBoxes, Violations =        239 
+
+Route SBox (87 of 91) [267,88..295,138]
+OffGrid X = 26/72, Y = 66/221
+	Initial Violations =   44 (0)
+	Final   Violations =    0 (0)
+	******* Total Violations =     208 (0)
+  Routed       87/91 SBoxes, Violations =        208 
+
+Route SBox (88 of 91) [267,133..295,183]
+OffGrid X = 29/74, Y = 56/211
+	Initial Violations =   50 (0)
+	Final   Violations =    0 (0)
+	******* Total Violations =     186 (0)
+  Routed       88/91 SBoxes, Violations =        186 
+
+Route SBox (89 of 91) [267,178..295,228]
+OffGrid X = 22/69, Y = 40/196
+	Initial Violations =   31 (0)
+	Final   Violations =    0 (0)
+	******* Total Violations =     166 (0)
+  Routed       89/91 SBoxes, Violations =        166 
+
+Route SBox (90 of 91) [267,222..295,273]
+OffGrid X = 12/60, Y = 27/187
+	Initial Violations =   49 (0)
+	Final   Violations =    6 (0)
+	******* Total Violations =     147 (0)
+  Routed       90/91 SBoxes, Violations =        147 
+
+Route SBox (91 of 91) [267,267..295,301]
+OffGrid X = 5/53, Y = 5/55
+	Initial Violations =    3 (0)
+	Final   Violations =    0 (0)
+	******* Total Violations =     139 (0)
+  Routed       91/91 SBoxes, Violations =        139 
+
+
+DRC-SUMMARY:
+
+        @@@@@@@ TOTAL VIOLATIONS =     139 (0) (recheck = 2)
+
+
+
+[               ROUTE] CPU = 0:00:03, Elapsed = 0:00:04
+
+[               ROUTE] Peak Memory =    157M Data =     41M
+
+  Routed        1/98 SBoxes, Violations =        139 
+
+  Routed        2/98 SBoxes, Violations =        139 
+
+  Routed        3/98 SBoxes, Violations =        139 
+
+Route SBox (4 of 98) [-12,54..38,82]
+OffGrid X = 44/142, Y = 70/151
+	Initial Violations =    3 (0)
+	Final   Violations =    1 (0)
+	******* Total Violations =     137 (0)
+  Routed        4/98 SBoxes, Violations =        137 
+
+Route SBox (5 of 98) [-12,77..38,105]
+OffGrid X = 47/146, Y = 77/158
+	Initial Violations =    1 (0)
+	Final   Violations =    1 (0)
+	******* Total Violations =     137 (0)
+  Routed        5/98 SBoxes, Violations =        137 
+
+Route SBox (6 of 98) [-12,99..38,127]
+OffGrid X = 44/141, Y = 70/150
+	Initial Violations =    1 (0)
+	Final   Violations =    1 (0)
+	******* Total Violations =     137 (0)
+  Routed        6/98 SBoxes, Violations =        137 
+
+Route SBox (7 of 98) [-12,122..38,150]
+OffGrid X = 27/126, Y = 43/127
+	Initial Violations =    4 (0)
+	Final   Violations =    0 (0)
+	******* Total Violations =     133 (0)
+  Routed        7/98 SBoxes, Violations =        133 
+
+  Routed        8/98 SBoxes, Violations =        133 
+
+  Routed        9/98 SBoxes, Violations =        133 
+
+  Routed       10/98 SBoxes, Violations =        133 
+
+  Routed       11/98 SBoxes, Violations =        133 
+
+  Routed       12/98 SBoxes, Violations =        133 
+
+Route SBox (13 of 98) [-12,256..38,284]
+OffGrid X = 23/122, Y = 41/120
+	Initial Violations =    2 (0)
+	Final   Violations =    0 (0)
+	******* Total Violations =     129 (0)
+  Routed       13/98 SBoxes, Violations =        129 
+
+  Routed       14/98 SBoxes, Violations =        129 
+
+  Routed       15/98 SBoxes, Violations =        129 
+
+  Routed       16/98 SBoxes, Violations =        129 
+
+Route SBox (17 of 98) [32,32..83,60]
+OffGrid X = 50/182, Y = 70/153
+	Initial Violations =    4 (0)
+	Final   Violations =    1 (0)
+	******* Total Violations =     126 (0)
+  Routed       17/98 SBoxes, Violations =        126 
+
+  Routed       18/98 SBoxes, Violations =        126 
+
+  Routed       19/98 SBoxes, Violations =        126 
+
+  Routed       20/98 SBoxes, Violations =        126 
+
+Route SBox (21 of 98) [32,122..83,150]
+OffGrid X = 60/192, Y = 91/167
+	Initial Violations =    1 (0)
+	Final   Violations =    1 (0)
+	******* Total Violations =     125 (0)
+  Routed       21/98 SBoxes, Violations =        125 
+
+Route SBox (22 of 98) [32,144..83,172]
+OffGrid X = 57/189, Y = 84/162
+	Initial Violations =    3 (0)
+	Final   Violations =    1 (0)
+	******* Total Violations =     123 (0)
+  Routed       22/98 SBoxes, Violations =        123 
+
+Route SBox (23 of 98) [32,166..83,194]
+OffGrid X = 59/190, Y = 81/160
+	Initial Violations =    3 (0)
+	Final   Violations =    0 (0)
+	******* Total Violations =     120 (0)
+  Routed       23/98 SBoxes, Violations =        120 
+
+  Routed       24/98 SBoxes, Violations =        120 
+
+  Routed       25/98 SBoxes, Violations =        120 
+
+Route SBox (26 of 98) [32,234..83,262]
+OffGrid X = 48/179, Y = 67/148
+	Initial Violations =    5 (0)
+	Final   Violations =    0 (0)
+	******* Total Violations =     115 (0)
+  Routed       26/98 SBoxes, Violations =        115 
+
+Route SBox (27 of 98) [32,256..83,284]
+OffGrid X = 26/160, Y = 47/125
+	Initial Violations =    7 (0)
+	Final   Violations =    0 (0)
+	******* Total Violations =      96 (0)
+  Routed       27/98 SBoxes, Violations =         96 
+
+  Routed       28/98 SBoxes, Violations =         96 
+
+  Routed       29/98 SBoxes, Violations =         96 
+
+  Routed       30/98 SBoxes, Violations =         96 
+
+  Routed       31/98 SBoxes, Violations =         96 
+
+  Routed       32/98 SBoxes, Violations =         96 
+
+Route SBox (33 of 98) [76,77..127,105]
+OffGrid X = 56/188, Y = 79/161
+	Initial Violations =    2 (0)
+	Final   Violations =    0 (0)
+	******* Total Violations =      94 (0)
+  Routed       33/98 SBoxes, Violations =         94 
+
+  Routed       34/98 SBoxes, Violations =         94 
+
+Route SBox (35 of 98) [76,122..127,150]
+OffGrid X = 46/178, Y = 61/143
+	Initial Violations =    2 (0)
+	Final   Violations =    1 (0)
+	******* Total Violations =      93 (0)
+  Routed       35/98 SBoxes, Violations =         93 
+
+Route SBox (36 of 98) [76,144..127,172]
+OffGrid X = 57/186, Y = 93/170
+	Initial Violations =    2 (0)
+	Final   Violations =    2 (0)
+	******* Total Violations =      93 (0)
+  Routed       36/98 SBoxes, Violations =         93 
+
+  Routed       37/98 SBoxes, Violations =         93 
+
+Route SBox (38 of 98) [76,189..127,217]
+OffGrid X = 53/185, Y = 108/183
+	Initial Violations =    2 (0)
+	Final   Violations =    1 (0)
+	******* Total Violations =      91 (0)
+  Routed       38/98 SBoxes, Violations =         91 
+
+Route SBox (39 of 98) [76,211..127,239]
+OffGrid X = 31/165, Y = 49/131
+	Initial Violations =    4 (0)
+	Final   Violations =    0 (0)
+	******* Total Violations =      87 (0)
+  Routed       39/98 SBoxes, Violations =         87 
+
+  Routed       40/98 SBoxes, Violations =         87 
+
+Route SBox (41 of 98) [76,256..127,284]
+OffGrid X = 13/149, Y = 27/109
+	Initial Violations =    2 (0)
+	Final   Violations =    0 (0)
+	******* Total Violations =      83 (0)
+  Routed       41/98 SBoxes, Violations =         83 
+
+  Routed       42/98 SBoxes, Violations =         83 
+
+  Routed       43/98 SBoxes, Violations =         83 
+
+  Routed       44/98 SBoxes, Violations =         83 
+
+  Routed       45/98 SBoxes, Violations =         83 
+
+  Routed       46/98 SBoxes, Violations =         83 
+
+Route SBox (47 of 98) [121,77..172,105]
+OffGrid X = 40/174, Y = 61/144
+	Initial Violations =    5 (0)
+	Final   Violations =    0 (0)
+	******* Total Violations =      78 (0)
+  Routed       47/98 SBoxes, Violations =         78 
+
+  Routed       48/98 SBoxes, Violations =         78 
+
+  Routed       49/98 SBoxes, Violations =         78 
+
+  Routed       50/98 SBoxes, Violations =         78 
+
+  Routed       51/98 SBoxes, Violations =         78 
+
+Route SBox (52 of 98) [121,189..172,217]
+OffGrid X = 39/174, Y = 81/161
+	Initial Violations =    3 (0)
+	Final   Violations =    2 (0)
+	******* Total Violations =      76 (0)
+  Routed       52/98 SBoxes, Violations =         76 
+
+Route SBox (53 of 98) [121,211..172,239]
+OffGrid X = 18/155, Y = 13/104
+	Initial Violations =    1 (0)
+	Final   Violations =    1 (0)
+	******* Total Violations =      76 (0)
+  Routed       53/98 SBoxes, Violations =         76 
+
+  Routed       54/98 SBoxes, Violations =         76 
+
+  Routed       55/98 SBoxes, Violations =         76 
+
+  Routed       56/98 SBoxes, Violations =         76 
+
+Route SBox (57 of 98) [166,-12..217,15]
+OffGrid X = 5/142, Y = 5/55
+	Initial Violations =    4 (0)
+	Final   Violations =    0 (0)
+	******* Total Violations =      72 (0)
+  Routed       57/98 SBoxes, Violations =         72 
+
+Route SBox (58 of 98) [166,10..217,38]
+OffGrid X = 12/147, Y = 25/113
+	Initial Violations =    1 (0)
+	Final   Violations =    0 (0)
+	******* Total Violations =      71 (0)
+  Routed       58/98 SBoxes, Violations =         71 
+
+  Routed       59/98 SBoxes, Violations =         71 
+
+  Routed       60/98 SBoxes, Violations =         71 
+
+Route SBox (61 of 98) [166,77..217,105]
+OffGrid X = 43/177, Y = 61/144
+	Initial Violations =    3 (0)
+	Final   Violations =    0 (0)
+	******* Total Violations =      68 (0)
+  Routed       61/98 SBoxes, Violations =         68 
+
+Route SBox (62 of 98) [166,99..217,127]
+OffGrid X = 56/187, Y = 78/160
+	Initial Violations =    3 (0)
+	Final   Violations =    0 (0)
+	******* Total Violations =      65 (0)
+  Routed       62/98 SBoxes, Violations =         65 
+
+Route SBox (63 of 98) [166,122..217,150]
+OffGrid X = 54/183, Y = 79/159
+	Initial Violations =   13 (0)
+	Final   Violations =    0 (0)
+	******* Total Violations =      48 (0)
+  Routed       63/98 SBoxes, Violations =         48 
+
+  Routed       64/98 SBoxes, Violations =         48 
+
+  Routed       65/98 SBoxes, Violations =         48 
+
+Route SBox (66 of 98) [166,189..217,217]
+OffGrid X = 51/185, Y = 81/158
+	Initial Violations =    2 (0)
+	Final   Violations =    2 (0)
+	******* Total Violations =      48 (0)
+  Routed       66/98 SBoxes, Violations =         48 
+
+Route SBox (67 of 98) [166,211..217,239]
+OffGrid X = 30/165, Y = 58/141
+	Initial Violations =    1 (0)
+	Final   Violations =    1 (0)
+	******* Total Violations =      48 (0)
+  Routed       67/98 SBoxes, Violations =         48 
+
+  Routed       68/98 SBoxes, Violations =         48 
+
+Route SBox (69 of 98) [166,256..217,284]
+OffGrid X = 13/149, Y = 30/112
+	Initial Violations =    3 (0)
+	Final   Violations =    0 (0)
+	******* Total Violations =      42 (0)
+  Routed       69/98 SBoxes, Violations =         42 
+
+  Routed       70/98 SBoxes, Violations =         42 
+
+  Routed       71/98 SBoxes, Violations =         42 
+
+  Routed       72/98 SBoxes, Violations =         42 
+
+Route SBox (73 of 98) [211,32..262,60]
+OffGrid X = 18/153, Y = 38/125
+	Initial Violations =    3 (0)
+	Final   Violations =    0 (0)
+	******* Total Violations =      39 (0)
+  Routed       73/98 SBoxes, Violations =         39 
+
+  Routed       74/98 SBoxes, Violations =         39 
+
+Route SBox (75 of 98) [211,77..262,105]
+OffGrid X = 44/177, Y = 70/151
+	Initial Violations =    5 (0)
+	Final   Violations =    0 (0)
+	******* Total Violations =      34 (0)
+  Routed       75/98 SBoxes, Violations =         34 
+
+  Routed       76/98 SBoxes, Violations =         34 
+
+  Routed       77/98 SBoxes, Violations =         34 
+
+Route SBox (78 of 98) [211,144..262,172]
+OffGrid X = 69/199, Y = 104/180
+	Initial Violations =    3 (0)
+	Final   Violations =    0 (0)
+	******* Total Violations =      31 (0)
+  Routed       78/98 SBoxes, Violations =         31 
+
+Route SBox (79 of 98) [211,166..262,194]
+OffGrid X = 59/188, Y = 82/163
+	Initial Violations =    4 (0)
+	Final   Violations =    1 (0)
+	******* Total Violations =      27 (0)
+  Routed       79/98 SBoxes, Violations =         27 
+
+  Routed       80/98 SBoxes, Violations =         27 
+
+  Routed       81/98 SBoxes, Violations =         27 
+
+Route SBox (82 of 98) [211,234..262,262]
+OffGrid X = 17/154, Y = 28/117
+	Initial Violations =    3 (0)
+	Final   Violations =    0 (0)
+	******* Total Violations =      25 (0)
+  Routed       82/98 SBoxes, Violations =         25 
+
+Route SBox (83 of 98) [211,256..262,284]
+OffGrid X = 9/146, Y = 16/101
+	Initial Violations =    5 (0)
+	Final   Violations =    0 (0)
+	******* Total Violations =      20 (0)
+  Routed       83/98 SBoxes, Violations =         20 
+
+  Routed       84/98 SBoxes, Violations =         20 
+
+  Routed       85/98 SBoxes, Violations =         20 
+
+  Routed       86/98 SBoxes, Violations =         20 
+
+Route SBox (87 of 98) [256,32..303,60]
+OffGrid X = 21/98, Y = 54/138
+	Initial Violations =    3 (0)
+	Final   Violations =    0 (0)
+	******* Total Violations =      17 (0)
+  Routed       87/98 SBoxes, Violations =         17 
+
+  Routed       88/98 SBoxes, Violations =         17 
+
+  Routed       89/98 SBoxes, Violations =         17 
+
+  Routed       90/98 SBoxes, Violations =         17 
+
+  Routed       91/98 SBoxes, Violations =         17 
+
+  Routed       92/98 SBoxes, Violations =         17 
+
+  Routed       93/98 SBoxes, Violations =         17 
+
+  Routed       94/98 SBoxes, Violations =         17 
+
+Route SBox (95 of 98) [256,211..303,239]
+OffGrid X = 18/93, Y = 23/111
+	Initial Violations =    3 (0)
+	Final   Violations =    0 (0)
+	******* Total Violations =      11 (0)
+  Routed       95/98 SBoxes, Violations =         11 
+
+  Routed       96/98 SBoxes, Violations =         11 
+
+  Routed       97/98 SBoxes, Violations =         11 
+
+  Routed       98/98 SBoxes, Violations =         11 
+
+
+DRC-SUMMARY:
+
+        @@@@@@@ TOTAL VIOLATIONS =      11 (0)
+
+
+
+[               ROUTE] CPU = 0:00:04, Elapsed = 0:00:04
+
+[               ROUTE] Peak Memory =    157M Data =     41M
+
+Total Wire Length =        85417 micron
+
+Total Number of Contacts = 19104
+
+        Layer       M1 :         8778 micron
+
+        Layer       M2 :        53672 micron
+
+        Layer       M3 :        18925 micron
+
+        Layer    TOP_M :         4042 micron
+
+        Via   V3_cross :         8485
+
+        Via   V2_cross :         1919
+
+        Via   V2_cross :         7027
+
+        Via         VL :         1673
+
+
+DRC-SUMMARY:
+
+        @@@@@@@ TOTAL VIOLATIONS =      11 (0)
+
+     3 : Diff-net spacing
+
+     8 : Illegal loop (param: avoidViaLoop, doAntennaConx)
+
+
+
+Updating the database ...
+
+[           UPDATE DB] CPU = 0:00:04, Elapsed = 0:00:04
+
+[           UPDATE DB] Peak Memory =    157M Data =      9M
+
+Information: RC extraction has been freed. (PSYN-503)
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          Begin global routing.
+Reading database ... 
+Error: It is not recommended to use classic router commands after Zroute commands. (RT-302)
+Using [2 x 2] Fat Wire Table for M1
+
+Using [2 x 2] Fat Wire Table for M2
+
+Using [2 x 2] Fat Wire Table for M3
+
+Using [2 x 2] Fat Wire Table for TOP_M
+
+Select via(VL) as the default for layer(TOP_V)
+
+Select via(V3_cross) as the default for layer(V3)
+
+Select via(V2_cross) as the default for layer(V2)
+
+Warning: Cell contains tie connections which are not connected to real PG. (MW-349)
+# Masters = 52 , # Instances = 3028 , # Nets = 3083
+
+[VL] and [V3_cross] stacking is allowed
+
+[V3_cross] and [V2_cross] stacking is allowed
+
+Constructing data structure ... 
+
+Number of plan groups = 0
+Number of voltage areas = 0
+user unit = 1000 db unit.
+db min Grid = 5 db unit.
+Design Bounding Box (0.00 0.00) (285.44 283.20)
+Number of routing layers = 4.
+track info for layer(M1):
+Number of X routing tracks = 510.
+X Track min 0.20 max 285.24, Ave. track dist = 0.56
+Number of Y routing tracks = 505.
+Y Track min 0.48 max 282.72, Ave. track dist = 0.56
+track info for layer(M2):
+Number of X routing tracks = 510.
+X Track min 0.20 max 285.24, Ave. track dist = 0.56
+Number of Y routing tracks = 918.
+Y Track min 0.48 max 282.72, Ave. track dist = 0.31
+track info for layer(M3):
+Number of X routing tracks = 763.
+X Track min 0.20 max 285.24, Ave. track dist = 0.37
+Number of Y routing tracks = 428.
+Y Track min 0.76 max 282.58, Ave. track dist = 0.66
+track info for layer(TOP_M):
+Number of X routing tracks = 255.
+X Track min 0.20 max 285.24, Ave. track dist = 1.12
+Number of Y routing tracks = 428.
+Y Track min 0.76 max 282.58, Ave. track dist = 0.66
+Creating uniform X GGrids ...
+Creating uniform Y GGrids ...
+Number of X global grids = 52.
+Number of Y global grids = 52.
+X global grid min 0.00 max 286.44, Ave. ggrid dist = 5.62
+Y global grid min 0.00 max 284.20, Ave. ggrid dist = 5.57
+Number of instances = 3028.
+Number of signal/clock nets = 3081.
+Number of net ports = 8413.
+Average number of ports per net = 2.73
+Largest net SNPS_LOGIC0 has 33 ports.
+Number of fully detailed routed nets = 1.
+Number of GCells = 10404.
+VR: Init Virtual Routing - Level 1
+
+VR: ignore voltage areas
+
+VR: Virtual Routing Completed
+
+Number of nets to route = 3080.
+Begin Initial routing ...
+Initial routing completed.
+Initial. Routing result:
+Initial. Both Dirs: Overflow = 1860 Max = 9 GRCs = 854 (16.42%)
+Initial. H routing: Overflow = 1840 Max = 9 (1 GRCs) GRCs = 837 (16.09%)
+Initial. V routing: Overflow = 20 Max = 2 (3 GRCs) GRCs = 17 (0.33%)
+Initial. M1       : Overflow = 519 Max = 6 (1 GRCs) GRCs = 371 (14.26%)
+Initial. M2       : Overflow = 20 Max = 2 (3 GRCs) GRCs = 17 (0.65%)
+Initial. M3       : Overflow = 1321 Max = 5 (2 GRCs) GRCs = 606 (23.30%)
+Initial. TOP_M    : Overflow = 0 Max = 0 GRCs = 0 (0.00%)
+Initial. Total wire length = 61114.55
+Initial. Layer M1 wire length = 5590.48
+Initial. Layer M2 wire length = 35942.05
+Initial. Layer M3 wire length = 19531.68
+Initial. Layer TOP_M wire length = 50.34
+Initial. Via V2_cross count = 9012
+Initial. Via V3_cross count = 4455
+Initial. Via VL count = 14
+Begin Rerouting ... 
+Begin Phase 1 ...
+phase1. Routing result:
+phase1. Both Dirs: Overflow = 1582 Max = 6 GRCs = 762 (14.65%)
+phase1. H routing: Overflow = 1579 Max = 6 (3 GRCs) GRCs = 759 (14.59%)
+phase1. V routing: Overflow = 3 Max = 1 (3 GRCs) GRCs = 3 (0.06%)
+phase1. M1       : Overflow = 415 Max = 4 (4 GRCs) GRCs = 308 (11.84%)
+phase1. M2       : Overflow = 3 Max = 1 (3 GRCs) GRCs = 3 (0.12%)
+phase1. M3       : Overflow = 1164 Max = 5 (1 GRCs) GRCs = 577 (22.18%)
+phase1. TOP_M    : Overflow = 0 Max = 0 GRCs = 0 (0.00%)
+phase1. Total wire length = 67871.89
+phase1. Layer M1 wire length = 7512.40
+phase1. Layer M2 wire length = 42290.67
+phase1. Layer M3 wire length = 17906.56
+phase1. Layer TOP_M wire length = 162.26
+phase1. Via V2_cross count = 9189
+phase1. Via V3_cross count = 4317
+phase1. Via VL count = 42
+Phase 1 completed.
+Begin Phase 2 ...
+phase2. Routing result:
+phase2. Both Dirs: Overflow = 1370 Max = 5 GRCs = 718 (13.80%)
+phase2. H routing: Overflow = 1366 Max = 5 (4 GRCs) GRCs = 714 (13.73%)
+phase2. V routing: Overflow = 4 Max = 1 (4 GRCs) GRCs = 4 (0.08%)
+phase2. M1       : Overflow = 370 Max = 3 (4 GRCs) GRCs = 298 (11.46%)
+phase2. M2       : Overflow = 2 Max = 1 (2 GRCs) GRCs = 2 (0.08%)
+phase2. M3       : Overflow = 996 Max = 4 (4 GRCs) GRCs = 550 (21.15%)
+phase2. TOP_M    : Overflow = 2 Max = 1 (2 GRCs) GRCs = 2 (0.08%)
+phase2. Total wire length = 82945.90
+phase2. Layer M1 wire length = 8764.00
+phase2. Layer M2 wire length = 56265.20
+phase2. Layer M3 wire length = 17175.76
+phase2. Layer TOP_M wire length = 740.94
+phase2. Via V2_cross count = 9470
+phase2. Via V3_cross count = 4364
+phase2. Via VL count = 172
+Phase 2 completed.
+Begin Phase 3 ...
+phase3. Routing result:
+phase3. Both Dirs: Overflow = 1323 Max = 5 GRCs = 708 (13.61%)
+phase3. H routing: Overflow = 1318 Max = 5 (3 GRCs) GRCs = 703 (13.51%)
+phase3. V routing: Overflow = 5 Max = 1 (5 GRCs) GRCs = 5 (0.10%)
+phase3. M1       : Overflow = 339 Max = 2 (58 GRCs) GRCs = 281 (10.80%)
+phase3. M2       : Overflow = 3 Max = 1 (3 GRCs) GRCs = 3 (0.12%)
+phase3. M3       : Overflow = 979 Max = 4 (1 GRCs) GRCs = 549 (21.11%)
+phase3. TOP_M    : Overflow = 2 Max = 1 (2 GRCs) GRCs = 2 (0.08%)
+phase3. Total wire length = 85281.13
+phase3. Layer M1 wire length = 8854.72
+phase3. Layer M2 wire length = 58303.66
+phase3. Layer M3 wire length = 17213.84
+phase3. Layer TOP_M wire length = 908.91
+phase3. Via V2_cross count = 9488
+phase3. Via V3_cross count = 4424
+phase3. Via VL count = 219
+Phase 3 completed.
+Begin Phase 4 ...
+phase4. Routing result:
+phase4. Both Dirs: Overflow = 1309 Max = 5 GRCs = 707 (13.59%)
+phase4. H routing: Overflow = 1306 Max = 5 (2 GRCs) GRCs = 704 (13.53%)
+phase4. V routing: Overflow = 3 Max = 1 (3 GRCs) GRCs = 3 (0.06%)
+phase4. M1       : Overflow = 331 Max = 2 (55 GRCs) GRCs = 276 (10.61%)
+phase4. M2       : Overflow = 1 Max = 1 (1 GRCs) GRCs = 1 (0.04%)
+phase4. M3       : Overflow = 975 Max = 4 (1 GRCs) GRCs = 553 (21.26%)
+phase4. TOP_M    : Overflow = 2 Max = 1 (2 GRCs) GRCs = 2 (0.08%)
+phase4. Total wire length = 86042.52
+phase4. Layer M1 wire length = 8871.52
+phase4. Layer M2 wire length = 58902.09
+phase4. Layer M3 wire length = 17253.04
+phase4. Layer TOP_M wire length = 1015.87
+phase4. Via V2_cross count = 9488
+phase4. Via V3_cross count = 4451
+phase4. Via VL count = 243
+Phase 4 completed.
+Begin Phase 5 ...
+phase5. Routing result:
+phase5. Both Dirs: Overflow = 1309 Max = 5 GRCs = 707 (13.59%)
+phase5. H routing: Overflow = 1306 Max = 5 (2 GRCs) GRCs = 704 (13.53%)
+phase5. V routing: Overflow = 3 Max = 1 (3 GRCs) GRCs = 3 (0.06%)
+phase5. M1       : Overflow = 331 Max = 2 (55 GRCs) GRCs = 276 (10.61%)
+phase5. M2       : Overflow = 1 Max = 1 (1 GRCs) GRCs = 1 (0.04%)
+phase5. M3       : Overflow = 975 Max = 4 (1 GRCs) GRCs = 553 (21.26%)
+phase5. TOP_M    : Overflow = 2 Max = 1 (2 GRCs) GRCs = 2 (0.08%)
+phase5. Total wire length = 86042.52
+phase5. Layer M1 wire length = 8877.12
+phase5. Layer M2 wire length = 58902.09
+phase5. Layer M3 wire length = 17247.44
+phase5. Layer TOP_M wire length = 1015.87
+phase5. Via V2_cross count = 9490
+phase5. Via V3_cross count = 4449
+phase5. Via VL count = 243
+Phase 5 completed.
+Rerouting completed.
+Writing results to database ...
+
+Deleting previous global routing.
+[  End of Global Routing] CPU =    0:00:00, gr_data VM =        7 M
+                   Elapsed =    0:00:01, total   VM =      110 M
+Global routing completed.
+Information: RC extraction has been freed. (PSYN-503)
+Start Track Assignment
+Error: It is not recommended to use classic router commands after Zroute commands. (RT-302)
+Using [2 x 2] Fat Wire Table for M1
+
+Using [2 x 2] Fat Wire Table for M2
+
+Using [2 x 2] Fat Wire Table for M3
+
+Using [2 x 2] Fat Wire Table for TOP_M
+
+Select via(VL) as the default for layer(TOP_V)
+
+Select via(V3_cross) as the default for layer(V3)
+
+Select via(V2_cross) as the default for layer(V2)
+
+Warning: Cell contains tie connections which are not connected to real PG. (MW-349)
+# Masters = 52 , # Instances = 3028 , # Nets = 3083
+
+[VL] and [V3_cross] stacking is allowed
+
+[V3_cross] and [V2_cross] stacking is allowed
+
+Start reading global routing
+Elapsed =    0:00:00, CPU =    0:00:00
+runTiming = 0 
+runXtalk = 0 
+GaTimingFileMode = 0 
+tryGlobalLayerOnly = 0 
+densityDriven = 0 
+
+Start initial assignment
+Assign cols
+......
+Elapsed =    0:00:00, CPU =    0:00:00
+Assign rows
+......
+Elapsed =    0:00:00, CPU =    0:00:00
+number of overlapped wires after initial assignment = 5488 of the total 16670 wires
+
+
+Start reroute with jog insertion
+number of overlapped wires AFTER rerouting = 3247 of the total 17112 wires
+
+Elapsed =    0:00:00, CPU =    0:00:00
+
+Number of M1 wires: 1646
+Number of M2 wires: 11219
+Number of M3 wires: 3853
+Number of TOP_M wires: 394
+Total number of wires in chip: 17112
+
+Total M1 wire length: 12612.0
+Total M2 wire length: 62228.5
+Total M3 wire length: 16218.3
+Total TOP_M wire length: 1684.4
+Total wire length in chip: 92743.2
+  (Including total preWire length: 833.72)
+
+Longest M1 wire length: 183.1
+Longest M2 wire length: 235.5
+Longest M3 wire length: 108.6
+Longest TOP_M wire length: 16.5
+
+ZCA Cleanup Wire Time:
+Elapsed =    0:00:00, CPU =    0:00:00
+
+ZCA Purge GRoute Time:
+Elapsed =    0:00:00, CPU =    0:00:00
+
+ZCA Wire/Via Output Time:
+Elapsed =    0:00:00, CPU =    0:00:00
+
+Peak memory size in Track Assignment is 111 Mbytes
+
+ZCA Runtime
+        Total = 0
+        Packing = 0
+        RouteLocal = 0
+        RouteUnAssigned = 0
+        ReRoute = 0
+        Optimization = 0
+ZCA Memory usage
+        size(Track) = 96        numTrack = 0
+        size(Wire) = 112        numWire = 0
+        size(PreWire) = 16      numPreWire = 13
+        size(BlkgPin) = 48      numBlkgPin = 16384
+        size(WideBlkg) = 72     numWideBlkg = 20
+        size(WireLink) = 16     numWireLink = 0
+        size(EdgeWires) = 32    numEdgeWires = 0
+        size(PinGrid) = 16      numPinGrid = 0
+        size(PinLink) = 80      numPinLink = 0
+        size(TargetLink) = 16   numTargetLink = 0
+        size(ViaLink) = 48      numViaLink = 0
+Information: RC extraction has been freed. (PSYN-503)
+Error: It is not recommended to use classic router commands after Zroute commands. (RT-302)
+Using [2 x 2] Fat Wire Table for M1
+
+Using [2 x 2] Fat Wire Table for M2
+
+Using [2 x 2] Fat Wire Table for M3
+
+Using [2 x 2] Fat Wire Table for TOP_M
+
+Select via(VL) as the default for layer(TOP_V)
+
+Select via(V3_cross) as the default for layer(V3)
+
+Select via(V2_cross) as the default for layer(V2)
+
+Warning: Cell contains tie connections which are not connected to real PG. (MW-349)
+# Masters = 52 , # Instances = 3028 , # Nets = 3083
+
+[VL] and [V3_cross] stacking is allowed
+
+[V3_cross] and [V2_cross] stacking is allowed
+
+
+******** Pin Access Analysis *******
+** # Cell Masters    =   51
+** # Ports (logical) =  161
+** # Pins (physical) =  161
+** # Pins with no good access point on Grid (V&H) =   0 ( 0%)
+Checking cell instance tracks on layer (M1)
+Checking cell instance tracks on layer (M2)
+There are no open nets!
+
+
+DRC-SUMMARY:
+
+        @@@@@@@ TOTAL VIOLATIONS =     139 (0) (recheck = 2)
+
+
+
+[               ROUTE] CPU = 0:00:03, Elapsed = 0:00:04
+
+[               ROUTE] Peak Memory =    157M Data =     41M
+
+
+DRC-SUMMARY:
+
+        @@@@@@@ TOTAL VIOLATIONS =      11 (0)
+
+
+
+[               ROUTE] CPU = 0:00:04, Elapsed = 0:00:04
+
+[               ROUTE] Peak Memory =    157M Data =     41M
+
+Total Wire Length =        85417 micron
+
+Total Number of Contacts = 19104
+
+        Layer       M1 :         8778 micron
+
+        Layer       M2 :        53672 micron
+
+        Layer       M3 :        18925 micron
+
+        Layer    TOP_M :         4042 micron
+
+        Via   V3_cross :         8485
+
+        Via   V2_cross :         1919
+
+        Via   V2_cross :         7027
+
+        Via         VL :         1673
+
+
+DRC-SUMMARY:
+
+        @@@@@@@ TOTAL VIOLATIONS =      11 (0)
+
+     3 : Diff-net spacing
+
+     8 : Illegal loop (param: avoidViaLoop, doAntennaConx)
+
+
+
+Updating the database ...
+
+[           UPDATE DB] CPU = 0:00:04, Elapsed = 0:00:04
+
+[           UPDATE DB] Peak Memory =    157M Data =      9M
+
+Information: RC extraction has been freed. (PSYN-503)
+1
+icc_shell> 

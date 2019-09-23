@@ -1,0 +1,345 @@
+module sq(clk,rst,inp,outp,state);
+
+input clk, rst, inp;
+output reg outp;
+output [2:0] state;
+reg [2:0] state;
+parameter S0=0, S1=1, S2=2, S3=3,S4=4;
+///next state logic
+always @(posedge clk or posedge rst)
+if(rst==1)
+begin
+state<=S0;
+outp<=0;
+$display("current state is %d",state);
+$display("current output is %b",outp);
+end
+else
+case(state)
+
+S0: if(inp)
+begin
+state<=S0;
+outp<=0;
+$display("current state is %d",state);
+$display("current output is %b",outp);
+end
+
+else
+begin
+state<=S1;
+outp<=0;
+$display("current state is %d",state);
+$display("current output is %b",outp);
+end
+
+S1: if(inp)
+begin
+state<=S2;
+outp<=0;
+$display("current state is %d",state);
+$display("current output is %b",outp);
+end
+
+else
+begin
+state<=S1;
+outp<=0;
+$display("current state is %d",state);
+$display("current output is %b",outp);
+end
+
+S2: if(inp)
+begin
+state<=S3;
+outp<=0;
+$display("current state is %d",state);
+$display("current output is %b",outp);
+end
+
+else
+begin
+state<=S0;
+outp<=0;
+$display("current state is %d",state);
+$display("current output is %b",outp);
+end
+
+S3: if(inp)
+begin
+state<=S0;
+outp<=0;
+$display("current state is %d",state);
+$display("current output is %b",outp);
+end
+
+else
+begin
+state<=S4;
+outp<=1;
+$display("current state is %d",state);
+$display("current output is %b",outp);
+end
+
+endcase
+
+/*always @(state)
+case(state)
+
+S0:
+outp<=0;
+S1:
+outp<=0;
+S2:
+outp<=0;
+S3:
+outp<=0;
+S4:
+outp<=1;
+endcase*/
+endmodule
+
+
+
+module sqt_v;
+
+	// Inputs
+	reg clk;
+	reg rst;
+	reg inp;
+
+	// Outputs
+	wire outp;
+	wire state
+
+	// Instantiate the Unit Under Test (UUT)
+	sq uut (
+		.clk(clk), 
+		.rst(rst), 
+		.inp(inp), 
+		.outp(outp)
+		.state(state)
+	);
+	initial
+clk=0;
+always
+#5 clk=~clk;
+	initial begin
+		// Initialize Inputs
+		#0 rst = 1;
+		#5 rst=0;
+		
+		#10 inp=1;
+		#10 inp=1;
+		#10 inp=1;
+		#10 inp=1;
+		#10 inp=0;
+		#10 inp=1;
+		#10 inp=1;
+		#10 inp=0;
+		#10 inp=1;
+		#10 inp=1;
+		#10 inp=1;
+		#10 inp=1;
+		#10 inp=1;
+		#10 inp=1;
+		#10 inp=0;
+		#10 inp=1;
+		#10 inp=1;
+		#10 inp=0;
+		#0 rst = 1;
+		#5 rst=0;
+		#10 inp=1;
+		#10 inp=1;
+		#10 inp=1;
+		#10 inp=1;
+		#10 inp=1;
+		#10 inp=1;
+		#10 inp=1;
+		#10 inp=1;
+		#10 inp=1;
+		#10 inp=1;
+		#500 $stop;
+	end
+      
+endmodule
+
+
+
+module sq1t_v;
+
+	// Inputs
+	reg clk;
+	reg rst;
+	reg inp;
+
+	// Outputs
+	wire outp;
+
+	// Instantiate the Unit Under Test (UUT)
+	sq1 uut (
+		.clk(clk), 
+		.rst(rst), 
+		.inp(inp), 
+		.outp(outp)
+	);
+
+	initial
+clk=0;
+always
+#5 clk=~clk;
+	initial begin
+		// Initialize Inputs
+		rst = 1;
+		#1 rst=0;
+		
+		#10 inp=1;
+		#10 inp=1;
+		#10 inp=1;
+		#10 inp=1;
+		#10 inp=0;
+		#10 inp=1;
+		#10 inp=0;
+		#10 inp=1;
+		#10 inp=1;
+		#10 inp=1;
+		#10 inp=1;
+		#10 inp=1;
+		#10 inp=1;
+		#10 inp=1;
+		#10 inp=0;
+		#10 inp=1;
+		#10 inp=1;
+		#10 inp=0;
+		#10 inp=1;
+		#10 inp=1;
+		#10 inp=1;
+		#10 inp=1;
+		#10 inp=1;
+		#10 inp=1;
+		#10 inp=1;
+		#10 inp=1;
+		#10 inp=1;
+		#10 inp=1;
+		#500 $stop;
+
+	end
+      
+endmodule
+
+
+module sq1(clk,rst,inp,outp);
+
+input clk, rst, inp;
+output reg outp;
+
+reg [2:0] state;
+parameter S0=0, S1=1, S2=2, S3=3,S4=4;
+///next state logic
+always @(posedge clk or posedge rst)
+if(rst==1)
+begin
+state<=S0;
+outp<=0;
+$display("current state is %d",state);
+$display("current output is %b",outp);
+end
+else
+case(state)
+
+S0: if(inp)
+begin
+state<=S1;
+outp<=0;
+$display("current state is %d",state);
+$display("current output is %b",outp);
+end
+
+else
+begin
+state<=S0;
+outp<=0;
+$display("current state is %d",state);
+$display("current output is %b",outp);
+end
+
+S1: if(inp==1)
+begin
+state<=S1;
+outp<=0;
+$display("current state is %d",state);
+$display("current output is %b",outp);
+end
+
+else
+begin
+state<=S2;
+outp<=0;
+$display("current state is %d",state);
+$display("current output is %b",outp);
+end
+
+S2: if(inp==1)
+begin
+state<=S3;
+outp<=0;
+$display("current state is %d",state);
+$display("current output is %b",outp);
+end
+
+else
+begin
+state<=S0;
+outp<=0;
+$display("current state is %d",state);
+$display("current output is %b",outp);
+end
+
+S3: if(inp==1)
+begin
+state<=S1;
+outp<=0;
+$display("current state is %d",state);
+$display("current output is %b",outp);
+end
+
+else
+begin
+state<=S4;
+outp<=0;
+$display("current state is %d",state);
+$display("current output is %b",outp);
+end
+
+S4: if(inp==1)
+begin
+state<=S0;
+outp<=1;
+$display("current state is %d",state);
+$display("current output is %b",outp);
+end
+
+else
+begin
+state<=S0;
+outp<=0;
+$display("current state is %d",state);
+$display("current output is %b",outp);
+end
+endcase
+
+/*always @(state)
+case(state)
+
+S0:
+outp<=0;
+S1:
+outp<=0;
+S2:
+outp<=0;
+S3:
+outp<=0;
+S4:
+outp<=1;
+endcase*/
+endmodule
